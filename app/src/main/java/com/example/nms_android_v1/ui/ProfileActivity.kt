@@ -1,11 +1,11 @@
- package com.example.nms_android_v1.ui
+package com.example.nms_android_v1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class PostActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post)
+        setContentView(R.layout.activity_profile)
     }
 }
