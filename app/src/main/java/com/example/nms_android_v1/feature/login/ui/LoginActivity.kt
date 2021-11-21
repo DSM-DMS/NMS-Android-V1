@@ -1,4 +1,4 @@
-package com.example.nms_android_v1.feature.login
+package com.example.nms_android_v1.feature.login.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

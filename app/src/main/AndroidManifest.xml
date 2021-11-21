@@ -19,7 +19,7 @@
             android:name=".feature.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.login.LoginActivity"
+            android:name=".feature.login.ui.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.StartActivity"
