@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NMSAndroidV1">
         <activity android:name=".MypageActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
