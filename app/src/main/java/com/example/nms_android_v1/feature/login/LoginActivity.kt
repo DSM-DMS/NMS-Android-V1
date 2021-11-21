@@ -1,11 +1,12 @@
-package com.example.nms_android_v1.ui
+package com.example.nms_android_v1.feature.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.nms_android_v1.R
 
-class ProfileActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_login)
     }
 }

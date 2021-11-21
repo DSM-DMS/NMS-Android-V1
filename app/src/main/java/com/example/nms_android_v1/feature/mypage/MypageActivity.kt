@@ -1,4 +1,4 @@
-package com.example.nms_android_v1.ui
+package com.example.nms_android_v1.feature.mypage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
