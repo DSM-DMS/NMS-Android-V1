@@ -8,6 +8,7 @@
         android:label="NMS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.Design.NoActionBar" >
         <activity
             android:name=".StartActivity"
@@ -15,6 +16,11 @@
         <activity
             android:name=".MypageActivity"
             android:exported="true" >
+=======
+        android:theme="@style/Theme.NMSAndroidV1">
+        <activity android:name=".MypageActivity"></activity>
+        <activity android:name=".MainActivity">
+>>>>>>> mypage
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
