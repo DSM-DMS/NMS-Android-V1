@@ -8,28 +8,21 @@
         android:label="NMS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
         android:theme="@style/Theme.Design.NoActionBar" >
         <activity
             android:name=".StartActivity"
             android:exported="false" />
         <activity
             android:name=".MypageActivity"
-            android:exported="true" >
-=======
-        android:theme="@style/Theme.NMSAndroidV1">
-        <activity android:name=".MypageActivity"></activity>
-        <activity android:name=".MainActivity">
->>>>>>> mypage
+            android:exported="false"/>
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

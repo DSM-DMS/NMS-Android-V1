@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:background="@color/white"
     tools:context=".MypageActivity">
 
@@ -56,8 +55,4 @@
         android:src="@drawable/mypage_profile_example"
         app:layout_constraintLeft_toLeftOf="@id/left_line"
         app:layout_constraintTop_toTopOf="@id/top_line"/>
-=======
-    tools:context=".MypageActivity">
-
->>>>>>> mypage
 </androidx.constraintlayout.widget.ConstraintLayout>
