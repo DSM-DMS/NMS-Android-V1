@@ -12,14 +12,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.08"/>
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.117"/>
+        app:layout_constraintGuide_percent="0.117" />
 
     <ImageView
         android:id="@+id/toplogo"
@@ -49,10 +49,17 @@
         android:background="#D1CACA"
         app:layout_constraintTop_toBottomOf="@+id/toplogo" />
 
-    <ImageView
-        android:layout_width="55dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:src="@drawable/mypage_profile_example"
         app:layout_constraintLeft_toLeftOf="@id/left_line"
-        app:layout_constraintTop_toTopOf="@id/top_line"/>
+        app:layout_constraintTop_toTopOf="@id/top_line">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/mypage_profile_example"/>
+
+        
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
