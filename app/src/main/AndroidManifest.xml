@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar" >
         <activity
-            android:name=".StartActivity"
+            android:name=".ui.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".MypageActivity"
+            android:name=".ui.MypageActivity"
             android:exported="false"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
