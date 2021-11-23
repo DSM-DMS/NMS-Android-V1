@@ -25,10 +25,10 @@
             android:name=".ui.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.mypage.MypageActivity"
+            android:name=".feature.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".feature.mypage.MypageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
