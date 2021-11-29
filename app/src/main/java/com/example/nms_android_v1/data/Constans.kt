@@ -1,0 +1,1 @@
+val BASE_URL = "base_url"
