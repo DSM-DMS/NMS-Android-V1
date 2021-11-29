@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nms_android_v1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".di.NmsApplication"
         android:allowBackup="true"
         android:icon="@drawable/nms_logo"
         android:label="NMS"
