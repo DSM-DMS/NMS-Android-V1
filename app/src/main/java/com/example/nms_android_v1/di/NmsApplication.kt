@@ -1,4 +1,14 @@
 package com.example.nms_android_v1.di
 
-class NmsApplication {
+import android.app.Application
+
+class NmsApplication: Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+
+        startKoin {
+
+        }
+    }
 }
