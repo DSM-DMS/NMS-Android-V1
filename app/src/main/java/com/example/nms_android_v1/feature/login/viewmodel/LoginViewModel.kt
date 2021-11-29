@@ -13,6 +13,7 @@ class LoginViewModel(
 ) : ViewModel() {
 
     val success : MutableLiveData<Boolean> = MutableLiveData()
+    val failed : MutableLiveData<Boolean> = MutableLiveData()
 
     fun login(loginRequest: LoginRequest) {
         rp.login(loginRequest).subscribe { response ->
@@ -21,7 +22,7 @@ class LoginViewModel(
                 refreshToken = response.body()?.accessToken.toString()
                 success.value = true
             } else {
-                success.value = true
+                failed.value = true
             }
         }
     }
