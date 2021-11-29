@@ -19,7 +19,7 @@
             android:name=".feature.post.PostActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.register.RegisterActivity"
+            android:name=".feature.register.ui.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".feature.login.ui.LoginActivity"
