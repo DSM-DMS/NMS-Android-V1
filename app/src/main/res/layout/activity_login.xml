@@ -30,15 +30,14 @@
             android:background="@drawable/bg_login_border"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:hint="ID or E-mail"
-            android:textColorHint="#707070"
-            android:paddingLeft="20dp"
-            android:textSize="13dp"
-            android:fontFamily="@font/noto_sans_kr_regular"
+            android:textColor="#707070"
+            android:id="@+id/etLoginID"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -46,10 +45,126 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
+            android:backgroundTint="#707070"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:hint="ID or E-mail"
+            android:paddingLeft="20dp"
+            android:textColorHint="#707070"
+            android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
+        <CheckBox
+            android:id="@+id/cbSaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/login_save_account_checkbox"
+            app:layout_constraintStart_toStartOf="@+id/etLoginID"
+            app:layout_constraintTop_toBottomOf="@+id/etLoginID" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="아이디 저장"
+            android:textColor="#707070"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cbSaveAccount"
+            app:layout_constraintStart_toEndOf="@+id/cbSaveAccount"
+            app:layout_constraintTop_toTopOf="@+id/cbSaveAccount" />
+
+        <EditText
+            android:textColor="#707070"
+            android:id="@+id/etLoginPW"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="#707070"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:hint="PASSWORD"
+            android:paddingLeft="20dp"
+            android:textColorHint="#707070"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@+id/etLoginID"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etLoginID"
+            app:layout_constraintTop_toBottomOf="@+id/etLoginID" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="37dp"
+            android:background="@drawable/bg_login_btn_border"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLoginRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="회원가입하기"
+            android:textColor="#707070"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="|"
+            android:textColor="#707070"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFindPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="비밀번호찾기"
+            android:textColor="#707070"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <ImageButton
+            android:id="@+id/ibSeeAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_see"
+            app:layout_constraintBottom_toBottomOf="@+id/etLoginPW"
+            app:layout_constraintEnd_toEndOf="@+id/etLoginPW"
+            app:layout_constraintTop_toTopOf="@+id/etLoginPW" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
