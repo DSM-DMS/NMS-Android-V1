@@ -1,7 +1,6 @@
 package com.example.nms_android_v1.feature.login.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -11,7 +10,7 @@ import com.example.nms_android_v1.databinding.ActivityLoginBinding
 import com.example.nms_android_v1.feature.login.model.LoginRequest
 import com.example.nms_android_v1.feature.login.viewmodel.LoginViewModel
 import com.example.nms_android_v1.feature.main.MainActivity
-import com.example.nms_android_v1.feature.register.RegisterActivity
+import com.example.nms_android_v1.feature.register.ui.RegisterActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
