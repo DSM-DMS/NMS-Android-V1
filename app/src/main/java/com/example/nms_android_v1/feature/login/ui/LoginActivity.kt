@@ -22,7 +22,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.run{
+        binding.run {
             tvLoginRegister.setOnClickListener {
                 startRegister()
             }

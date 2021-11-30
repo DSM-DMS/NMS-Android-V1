@@ -28,10 +28,13 @@ abstract class BaseFragment<B : ViewDataBinding>(
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
 
+        initView()
         observeEvent()
     }
 
     abstract fun observeEvent()
+
+    abstract fun initView()
 
     fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
