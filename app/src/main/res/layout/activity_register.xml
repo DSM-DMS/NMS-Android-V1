@@ -41,7 +41,7 @@
 
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etRgFirst"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -60,12 +60,87 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:backgroundTint="#707070"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:hint="닉네임"
+            android:paddingLeft="20dp"
+            android:textColor="#707070"
+            android:textColorHint="#707070"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+        <Spinner
+            android:id="@+id/spinnerGrade"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="232dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="20dp"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:background="#707070"
+            app:layout_constraintEnd_toEndOf="@+id/spinnerGrade"
+            app:layout_constraintStart_toStartOf="@+id/spinnerGrade"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpinnerGrade" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_spinner"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="@+id/spinnerGrade"
+            app:layout_constraintTop_toTopOf="@+id/spinnerGrade" />
+
+        <TextView
+            android:id="@+id/tvSpinnerGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="학년 선택"
+            android:textColor="#707070"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinnerGrade"
+            app:layout_constraintStart_toStartOf="@+id/spinnerGrade"
+            app:layout_constraintTop_toTopOf="@+id/spinnerGrade" />
+
         <Button
             android:id="@+id/btnNext"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="236dp"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/bg_register_btn_border_off"
@@ -73,12 +148,10 @@
             android:text="다음"
             android:textColor="@color/white"
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
-            app:layout_constraintVertical_bias="0.081" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
