@@ -61,7 +61,9 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:visibility="gone
+"
+            android:id="@+id/etRgSecond"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -71,7 +73,7 @@
             android:layout_marginRight="40dp"
             android:backgroundTint="#707070"
             android:fontFamily="@font/noto_sans_kr_regular"
-            android:hint="닉네임"
+            android:hint="비밀번호 확인"
             android:paddingLeft="20dp"
             android:textColor="#707070"
             android:textColorHint="#707070"
@@ -83,19 +85,20 @@
 
 
         <Spinner
+            android:visibility="gone"
             android:id="@+id/spinnerGrade"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="232dp"
+            android:layout_marginTop="140dp"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:fontFamily="@font/noto_sans_kr_regular"
             android:paddingLeft="20dp"
             android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -113,6 +116,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSpinnerGrade" />
 
         <ImageView
+            android:visibility="gone"
+            android:id="@+id/spinnerIg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_spinner"
@@ -121,6 +126,7 @@
             app:layout_constraintTop_toTopOf="@+id/spinnerGrade" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tvSpinnerGrade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
