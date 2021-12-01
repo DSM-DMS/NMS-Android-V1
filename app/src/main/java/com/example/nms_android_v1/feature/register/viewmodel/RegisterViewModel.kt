@@ -14,7 +14,8 @@ class RegisterViewModel(
     val success : MutableLiveData<Boolean> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    fun register(registerRequest: RegisterRequest) {
+    fun register(nickname: String, name: String, password: String, grade: String, email: String) {
+        val registerRequest = RegisterRequest(nickname, name, password, grade, email)
         rp.register(registerRequest).subscribe { response ->
             if(response.isSuccessful) {
                 success.value = true
