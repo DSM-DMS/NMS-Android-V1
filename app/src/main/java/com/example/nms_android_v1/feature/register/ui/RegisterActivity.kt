@@ -27,6 +27,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     var number: String ?= null
     var grade: String ?= null
     var password: String ?= null
+    var email: String ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -137,17 +138,49 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
         binding.btnNext.setOnClickListener {
             password = binding.etRgFirst.text.toString()
-            if(password == binding.etRgSecond.text.toString()) {
-                success()
+            val passwordCheck = binding.etRgSecond.text.toString()
+            if(password == passwordCheck) {
+                email()
             }
+        }
+
+    }
+
+    private fun email() {
+        binding.etRgFirst.text = null
+        binding.etRgFirst.hint = "이메일 (학교 이메일을 입력해주세요)"
+        binding.etRgSecond.visibility = View.GONE
+
+        binding.btnNext.setOnClickListener {
+            email = binding.etRgFirst.text.toString()
+
+            if(email.isNullOrEmpty()) showToast("이메일을 입력해주세요.")
+            else success()
         }
 
     }
 
     private fun success() {
         showToast("완료")
+//        vm.register(nickname!!, name!!, password!!, grade!!, email!!)
     }
 
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        vm.run {
+            success.observe(this@RegisterActivity, {
+                it.run {
+                    showToast("회원가입에 성공하셨습니다.")
+                    finish()
+                }
+            })
+
+            failed.observe(this@RegisterActivity, {
+                it.run {
+                    showToast("회원가입에 실패하셨습니다.")
+                    finish()
+                }
+            })
+        }
+    }
 }
