@@ -2,6 +2,7 @@ package com.example.nms_android_v1.di
 
 import BASE_URL
 import com.example.nms_android_v1.data.login.LoginApi
+import com.example.nms_android_v1.data.main.MainApi
 import com.example.nms_android_v1.data.register.RegisterApi
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
@@ -19,4 +20,8 @@ val loginApi : LoginApi by lazy {
 
 val registerApi : RegisterApi by lazy {
     retrofit.create(RegisterApi::class.java)
+}
+
+val mainApi : MainApi by lazy {
+    retrofit.create(MainApi::class.java)
 }
