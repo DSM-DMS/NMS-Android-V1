@@ -1,4 +1,4 @@
 val BASE_URL = "base_url"
 
-var accessToken: String = "default"
-var refreshToken: String = "default"
+var ACCESS_TOKEN: String = "default"
+var REFRESH_TOKEN: String = "default"
