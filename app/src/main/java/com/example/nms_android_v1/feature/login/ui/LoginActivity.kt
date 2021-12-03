@@ -33,6 +33,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
                 if(ID.isEmpty() || PW.isEmpty()) {
                     showToast("아이디 또는 비밀번호를 입력해주세요.")
+                    // 임시
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
                     return@setOnClickListener
                 }
 
