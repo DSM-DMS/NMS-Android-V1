@@ -1,12 +1,12 @@
 package com.example.nms_android_v1.feature.login.viewmodel
 
-import accessToken
+import ACCESS_TOKEN
+import REFRESH_TOKEN
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.nms_android_v1.data.login.LoginRepository
 import com.example.nms_android_v1.feature.login.model.LoginRequest
 import org.koin.core.Koin
-import refreshToken
 
 class LoginViewModel(
     private val rp: LoginRepository
@@ -18,8 +18,8 @@ class LoginViewModel(
     fun login(loginRequest: LoginRequest) {
         rp.login(loginRequest).subscribe { response ->
             if(response.isSuccessful) {
-                accessToken = response.body()?.accessToken.toString()
-                refreshToken = response.body()?.accessToken.toString()
+                ACCESS_TOKEN = response.body()?.accessToken.toString()
+                REFRESH_TOKEN = response.body()?.refreshToken.toString()
                 success.value = true
             } else {
                 failed.value = true
