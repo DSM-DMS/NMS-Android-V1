@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nms_android_v1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".di.NmsApplication"
         android:allowBackup="true"
         android:icon="@drawable/nms_logo"
         android:label="NMS"
@@ -16,7 +19,7 @@
             android:name=".feature.post.PostActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.register.RegisterActivity"
+            android:name=".feature.register.ui.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".feature.login.ui.LoginActivity"
@@ -35,6 +38,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".feature.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.mypage.MypageActivity"
+            android:exported="false">
         </activity>
     </application>
 
