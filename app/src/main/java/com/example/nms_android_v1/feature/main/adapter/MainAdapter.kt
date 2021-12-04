@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.databinding.MainItemBinding
 import com.example.nms_android_v1.feature.main.model.Notices
@@ -32,6 +33,11 @@ class MainAdapter(
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         var data: Notices = productData.get(position)
+
+        Glide.with(holder.itemView.context)
+            .load(data.writer.profile_url)
+            .into(binding.ivPostProfile)
+
     }
 
     override fun getItemCount(): Int {
