@@ -28,7 +28,7 @@
                 android:layout_height="26dp"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:gravity="left"
-                android:text="애들아 급식 알려줄"
+                android:text="애들아 급식 알려줄께"
                 android:textColor="@color/black"
                 android:textSize="9dp" />
 
