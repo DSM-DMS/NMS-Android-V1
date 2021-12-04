@@ -28,7 +28,7 @@
             android:name=".feature.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.mypage.MypageActivity"
+            android:name=".feature.mypage.ui.MypageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
