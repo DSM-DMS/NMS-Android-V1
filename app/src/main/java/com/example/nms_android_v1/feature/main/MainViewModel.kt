@@ -2,23 +2,21 @@ package com.example.nms_android_v1.feature.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.nms_android_v1.data.login.LoginRepository
 import com.example.nms_android_v1.data.main.MainRepository
-import com.example.nms_android_v1.data.register.RegisterRepository
-import com.example.nms_android_v1.feature.login.model.LoginRequest
-import com.example.nms_android_v1.feature.register.model.RegisterRequest
+import com.example.nms_android_v1.feature.main.model.Notices
+import com.example.nms_android_v1.feature.main.model.PostsResponse
 
 class MainViewModel(
     private val rp: MainRepository
 ) : ViewModel() {
 
-    val success : MutableLiveData<Boolean> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
+    val postsData : MutableLiveData<PostsResponse> = MutableLiveData()
 
-    fun register() {
+    fun getPosts() {
         rp.getPosts().subscribe { response ->
             if(response.isSuccessful) {
-                success.value = true
+                postsData.value = response.body()
             } else {
                 failed.value = true
             }
