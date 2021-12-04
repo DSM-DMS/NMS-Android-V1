@@ -1,4 +1,4 @@
-package com.example.nms_android_v1.model
+package com.example.nms_android_v1.feature.mypage.model
 
 class LikePostData {
     val id: String = ""
