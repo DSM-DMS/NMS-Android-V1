@@ -3,22 +3,45 @@ package com.example.nms_android_v1.feature.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.nms_android_v1.data.main.MainRepository
+import com.example.nms_android_v1.data.star.StarRepository
 import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.main.model.PostsResponse
 
 class MainViewModel(
-    private val rp: MainRepository
+    private val mp: MainRepository,
+    private val sp: StarRepository
 ) : ViewModel() {
 
+    val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
     val postsData : MutableLiveData<PostsResponse> = MutableLiveData()
 
     fun getPosts() {
-        rp.getPosts().subscribe { response ->
+        mp.getPosts().subscribe { response ->
             if(response.isSuccessful) {
                 postsData.value = response.body()
             } else {
                 failed.value = true
+            }
+        }
+    }
+
+    fun star(noticeId: String) {
+        sp.star(noticeId).subscribe { response ->
+            if(response.isSuccessful) {
+                toastMessage.value = "좋아요 성공"
+            } else {
+                toastMessage.value = "데이터 통신 실패"
+            }
+        }
+    }
+
+    fun unstar(noticeId: String) {
+        sp.star(noticeId).subscribe { response ->
+            if(response.isSuccessful) {
+                toastMessage.value = "취소 성공"
+            } else {
+                toastMessage.value = "데이터 통신 실패"
             }
         }
     }
