@@ -1,4 +1,4 @@
- package com.example.nms_android_v1.feature.post.ui
+ package com.example.nms_android_v1.feature.post
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

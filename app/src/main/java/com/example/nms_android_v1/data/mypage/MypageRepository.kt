@@ -10,8 +10,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Response
 
 class MypageRepository {
-    fun getMyPage() : @NonNull Single<Response<PostsResponse>> =
-        mypageApi.getMypage(ACCESS_TOKEN)
+    fun getPosts() : @NonNull Single<Response<PostsResponse>> =
+        mypageApi.getPosts(ACCESS_TOKEN)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 }

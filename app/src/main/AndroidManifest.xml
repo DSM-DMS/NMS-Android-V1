@@ -16,7 +16,7 @@
             android:name=".feature.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.post.ui.PostActivity"
+            android:name=".feature.post.PostActivity"
             android:exported="false" />
         <activity
             android:name=".feature.register.ui.RegisterActivity"
