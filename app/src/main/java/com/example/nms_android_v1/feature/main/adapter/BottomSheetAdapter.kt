@@ -15,8 +15,6 @@ import com.example.nms_android_v1.feature.main.MainViewModel
 import com.example.nms_android_v1.feature.main.model.BottomDialog.BottomDialogData
 import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.main.model.Writer
-import com.example.nms_android_v1.feature.post.PostActivity
-
 class BottomSheetAdapter(
     var data: MutableList<BottomDialogData> = ArrayList()
 ) : RecyclerView.Adapter<BottomSheetAdapter.Holder>() {
