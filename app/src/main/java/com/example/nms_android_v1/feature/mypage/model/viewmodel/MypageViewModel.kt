@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.example.nms_android_v1.data.mypage.MypageRepository
 
 class MypageViewModel(
-    private val rp: MypageRepository
+    private val repository: MypageRepository
 ) : ViewModel() {
 
     val success : MutableLiveData<Boolean> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    fun register() {
-        rp.getPosts().subscribe { response ->
+    fun Mypage() {
+        repository.getMyPage().subscribe { response ->
             if(response.isSuccessful) {
                 success.value = true
             } else {
