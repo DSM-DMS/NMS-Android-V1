@@ -10,6 +10,6 @@ import retrofit2.http.Header
 interface MainApi {
     @GET("notice")
     fun getPosts(
-        @Header("x-refresh-token") refreshToken: String
+        @Header("Authorization") accessToken: String
     ) : Single<Response<PostsResponse>>
 }
