@@ -1,17 +1,16 @@
-package com.example.nms_android_v1.feature.main
+package com.example.nms_android_v1.feature.main.ui.activity
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityMainBinding
-import com.example.nms_android_v1.feature.main.adapter.BottomSheetAdapter
 import com.example.nms_android_v1.feature.main.adapter.MainAdapter
-import com.example.nms_android_v1.feature.main.fragment.BottomDialogFragment
+import com.example.nms_android_v1.feature.main.ui.fragment.BottomDialogFragment
 import com.example.nms_android_v1.feature.main.model.BottomDialog.BottomDialogData
 import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.main.model.PostsResponse
-import com.example.nms_android_v1.feature.main.model.Writer
+import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -41,7 +40,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             BottomDialogData("3학년")
         )
 
-        val bottomDialogFragment = BottomDialogFragment(listType, listGrade)
+        val bottomDialogFragment = BottomDialogFragment(listType, listGrade, vm)
 
         binding.textView166.setOnClickListener {
             bottomDialogFragment.show(supportFragmentManager, "Tag")

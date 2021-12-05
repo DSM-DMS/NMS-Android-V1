@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.databinding.MainItemBinding
-import com.example.nms_android_v1.feature.main.MainViewModel
+import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
 import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.model.Writer
 import com.example.nms_android_v1.feature.post.PostActivity
 
 class MainAdapter(

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="activity"
-            type="com.example.nms_android_v1.feature.main.MainActivity" />
+            type="com.example.nms_android_v1.feature.main.ui.activity.MainActivity" />
     </data>
 
 
@@ -14,7 +14,7 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.main.MainActivity">
+        tools:context=".feature.main.ui.activity.MainActivity">
 
         <ImageButton
             android:id="@+id/imageButton"
