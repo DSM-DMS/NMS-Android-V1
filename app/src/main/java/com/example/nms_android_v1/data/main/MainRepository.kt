@@ -17,5 +17,8 @@ class MainRepository {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
-
+    fun getTargetPosts(target: String) : @NonNull Single<Response<PostsResponse>> =
+        mainApi.getTargetPosts(ACCESS_TOKEN, target)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
 }
