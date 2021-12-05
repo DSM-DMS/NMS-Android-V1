@@ -26,7 +26,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.StartActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity
+            android:name=".feature.main.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,12 +37,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".feature.mypage.ui.MypageActivity"
             android:exported="false" />
-        <activity
-            android:name=".feature.mypage.MypageActivity"
-            android:exported="false">
-        </activity>
     </application>
 
 </manifest>
