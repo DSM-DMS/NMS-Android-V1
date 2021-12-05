@@ -27,7 +27,6 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false)
         rv.layoutManager = gridLayoutManager
     }
