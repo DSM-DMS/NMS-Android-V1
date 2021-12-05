@@ -1,24 +1,17 @@
 package com.example.nms_android_v1.feature.main.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
-import com.example.nms_android_v1.databinding.MainItemBinding
-import com.example.nms_android_v1.feature.main.MainViewModel
 import com.example.nms_android_v1.feature.main.model.BottomDialog.BottomDialogData
-import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.model.Writer
-import com.example.nms_android_v1.feature.post.PostActivity
+import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
 
 class BottomSheetAdapter(
-    var data: MutableList<BottomDialogData> = ArrayList()
+    var data: MutableList<BottomDialogData> = ArrayList(),
+    var vm: MainViewModel
 ) : RecyclerView.Adapter<BottomSheetAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -34,6 +27,18 @@ class BottomSheetAdapter(
         val item = data[position]
 
         holder.tvMenu?.text = item.menu
+
+        holder.tvMenu?.setOnClickListener {
+            when(item.menu) {
+                "교내" -> vm.getTargetPosts("SCHOOL")
+                "교외" -> vm.getTargetPosts("SUBARBS")
+                "1학년" -> vm.getTargetPosts("GRADE_FIRST")
+                "2학년" -> vm.getTargetPosts("GRADE_SECOND")
+                "3학년" -> vm.getTargetPosts("GRADE_THIRD")
+                else -> vm.getPosts()
+            }
+        }
+        
     }
 
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
