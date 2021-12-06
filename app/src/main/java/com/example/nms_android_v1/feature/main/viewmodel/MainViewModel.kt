@@ -1,4 +1,4 @@
-package com.example.nms_android_v1.feature.main
+package com.example.nms_android_v1.feature.main.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -6,6 +6,7 @@ import com.example.nms_android_v1.data.main.MainRepository
 import com.example.nms_android_v1.data.star.StarRepository
 import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.main.model.PostsResponse
+import com.example.nms_android_v1.feature.main.model.Targets
 
 class MainViewModel(
     private val mp: MainRepository,
@@ -18,6 +19,16 @@ class MainViewModel(
 
     fun getPosts() {
         mp.getPosts().subscribe { response ->
+            if(response.isSuccessful) {
+                postsData.value = response.body()
+            } else {
+                failed.value = true
+            }
+        }
+    }
+
+    fun getTargetPosts(target: String) {
+        mp.getTargetPosts(target).subscribe { response ->
             if(response.isSuccessful) {
                 postsData.value = response.body()
             } else {

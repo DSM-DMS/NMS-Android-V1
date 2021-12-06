@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".feature.main.ui.activity.MainActivity"
             android:exported="false"/>
         <activity
             android:name=".feature.mypage.ui.MypageActivity"
