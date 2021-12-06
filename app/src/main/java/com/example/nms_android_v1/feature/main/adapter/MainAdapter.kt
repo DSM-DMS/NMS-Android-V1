@@ -12,7 +12,7 @@ import com.example.nms_android_v1.R
 import com.example.nms_android_v1.databinding.MainItemBinding
 import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
 import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.post.PostActivity
+import com.example.nms_android_v1.feature.post.ui.PostActivity
 
 class MainAdapter(
     val context: Context,
