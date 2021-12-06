@@ -3,6 +3,8 @@ package com.example.nms_android_v1.di
 import BASE_URL
 import com.example.nms_android_v1.data.login.LoginApi
 import com.example.nms_android_v1.data.main.MainApi
+import com.example.nms_android_v1.data.mypage.MypageApi
+import com.example.nms_android_v1.data.post.PostApi
 import com.example.nms_android_v1.data.register.RegisterApi
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
@@ -24,4 +26,12 @@ val registerApi : RegisterApi by lazy {
 
 val mainApi : MainApi by lazy {
     retrofit.create(MainApi::class.java)
+}
+
+val mypageApi : MypageApi by lazy {
+    retrofit.create(MypageApi::class.java)
+}
+
+val postApi : PostApi by lazy {
+    retrofit.create(PostApi::class.java)
 }
