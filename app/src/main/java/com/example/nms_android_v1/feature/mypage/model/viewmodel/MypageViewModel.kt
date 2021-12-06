@@ -11,7 +11,7 @@ class MypageViewModel(
     val success : MutableLiveData<Boolean> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    fun Mypage() {
+    fun mypage() {
         repository.getMyPage().subscribe { response ->
             if(response.isSuccessful) {
                 success.value = true
