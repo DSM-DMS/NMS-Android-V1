@@ -45,6 +45,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         binding.textView166.setOnClickListener {
             bottomDialogFragment.show(supportFragmentManager, "Tag")
         }
+        binding.stextView3.setOnClickListener {
+            bottomDialogFragment.show(supportFragmentManager, "Tag")
+        }
 
         binding.rvMain.layoutManager = LinearLayoutManager(this)
         binding.rvMain.setHasFixedSize(true)
