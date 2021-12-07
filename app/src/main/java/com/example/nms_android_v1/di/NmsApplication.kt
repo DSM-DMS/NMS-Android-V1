@@ -17,7 +17,7 @@ class NmsApplication: Application() {
                     loginModule,
                     registerModule,
                     mainModule,
-                    mypageModule,
+                    myPageModule,
                     postModule
                 )
             )
