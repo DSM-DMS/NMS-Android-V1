@@ -4,6 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".feature.post.ui.PostActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_line2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_line2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9455555" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/topblueblock"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/top_line">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <ImageButton
+           android:id="@+id/backbutton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/backbutton"
+            app:layout_constraintLeft_toLeftOf="@id/left_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:text="애들아 급식 알려줄께"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/left_line2"
+        app:layout_constraintRight_toRightOf="@id/right_line"
+        app:layout_constraintTop_toTopOf="@id/top_line2">
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-4dp"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:text="장성혜(마이스터)"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintLeft_toRightOf="@id/iv_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-10dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="2021년 10월 20일(화) 12:20"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+            app:layout_constraintLeft_toRightOf="@id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/placecategory"
+        android:layout_width="36dp"
+        android:layout_height="20dp"
+        android:background="@drawable/category"
+        android:layout_marginTop="8dp"
+        android:text="교네"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:fontFamily="@font/noto_sans_kr_medium"
+        app:layout_constraintTop_toBottomOf="@id/constraint"
+        app:layout_constraintLeft_toLeftOf="@id/left_line2"/>
+
+    <TextView
+        android:id="@+id/gradecategory"
+        android:layout_width="36dp"
+        android:layout_height="20dp"
+        android:background="@drawable/category"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="8dp"
+        android:text="1학년"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:fontFamily="@font/noto_sans_kr_medium"
+        app:layout_constraintTop_toBottomOf="@id/constraint"
+        app:layout_constraintLeft_toRightOf="@id/placecategory"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
