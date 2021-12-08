@@ -16,31 +16,8 @@ data class ResponsePostDTO(
     val comments : comments
 )
 
-data class writer(
-    val name: String,
-    val profile_url: String
-)
 
-data class targets(
-    val target: String
-)
 
-data class images(
-    val order_seq : Int,
-    val image_url : String
-)
 
-data class comments(
-    val id : Int,
-    val writer: writer,
-    val content : String,
-    val created_date: String,
-    val replies: replies
-)
 
-data class replies(
-    val id: Int,
-    val writer: writer,
-    val content: String,
-    val created_date: String
-)
+
