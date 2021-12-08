@@ -6,9 +6,11 @@ import com.example.nms_android_v1.data.main.MainApi
 import com.example.nms_android_v1.data.mypage.MypageApi
 import com.example.nms_android_v1.data.post.PostApi
 import com.example.nms_android_v1.data.register.RegisterApi
+import com.example.nms_android_v1.data.star.StarApi
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
 private val retrofit: Retrofit = Retrofit.Builder().apply {
     baseUrl(BASE_URL)
@@ -26,6 +28,10 @@ val registerApi : RegisterApi by lazy {
 
 val mainApi : MainApi by lazy {
     retrofit.create(MainApi::class.java)
+}
+
+val starApi : StarApi by lazy {
+    retrofit.create(StarApi::class.java)
 }
 
 val mypageApi : MypageApi by lazy {

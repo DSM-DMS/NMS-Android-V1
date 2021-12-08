@@ -1,25 +1,36 @@
-package com.example.nms_android_v1.feature.mypage.model.viewmodel
+package com.example.nms_android_v1.feature.main.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.nms_android_v1.data.mypage.MypageRepository
+import com.example.nms_android_v1.data.main.MainRepository
 import com.example.nms_android_v1.data.star.StarRepository
+import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.main.model.PostsResponse
-import com.example.nms_android_v1.feature.mypage.dto.ResponseMyPageDTO
+import com.example.nms_android_v1.feature.main.model.Targets
 
-class MypageViewModel(
-    private val repository: MypageRepository,
+class MainViewModel(
+    private val mp: MainRepository,
     private val sp: StarRepository
 ) : ViewModel() {
 
     val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
-    val postData : MutableLiveData<ResponseMyPageDTO> = MutableLiveData()
+    val postsData : MutableLiveData<PostsResponse> = MutableLiveData()
 
-    fun mypage() {
-        repository.getMyPage().subscribe { response ->
+    fun getPosts() {
+        mp.getPosts().subscribe { response ->
             if(response.isSuccessful) {
-                postData.value = response.body()
+                postsData.value = response.body()
+            } else {
+                failed.value = true
+            }
+        }
+    }
+
+    fun getTargetPosts(target: String) {
+        mp.getTargetPosts(target).subscribe { response ->
+            if(response.isSuccessful) {
+                postsData.value = response.body()
             } else {
                 failed.value = true
             }

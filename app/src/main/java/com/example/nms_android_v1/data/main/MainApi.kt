@@ -6,10 +6,19 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Query
 
 interface MainApi {
+    // 전체 공지사항 조회
     @GET("notice")
     fun getPosts(
-        @Header("x-refresh-token") refreshToken: String
+        @Header("Authorization") accessToken: String
+    ) : Single<Response<PostsResponse>>
+
+    // 공지사항 단일 조회
+    @GET("notice")
+    fun getTargetPosts(
+        @Header("Authorization") accessToken: String,
+        @Query("target") target: String
     ) : Single<Response<PostsResponse>>
 }
