@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityPostBinding
+import com.example.nms_android_v1.feature.main.model.Notices
 import com.example.nms_android_v1.feature.mypage.adapter.LikePostAdapter
 import com.example.nms_android_v1.feature.post.model.viewmodel.PostViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -14,7 +15,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
      R.layout.activity_post
  ) {
 
-     val vm: PostViewModel by viewModel()
+     private val vm: PostViewModel by viewModel()
+
+     private val postList = arrayListOf<Notices>()
 
      private lateinit var rv: RecyclerView
      private lateinit var MypageAdpater: LikePostAdapter
@@ -25,8 +28,5 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
      }
 
      override fun observeEvent() {
-         vm.run {
-
-         }
      }
  }

@@ -18,8 +18,6 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
 
     private val vm: MypageViewModel by viewModel()
 
-    private val postList = arrayListOf<Notices>()
-
     private lateinit var rv: RecyclerView
     private lateinit var MypageAdpater: LikePostAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
@@ -31,8 +29,5 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
     }
 
     override fun observeEvent() {
-        vm.run {
-
-        }
     }
 }

@@ -8,7 +8,7 @@ import com.example.nms_android_v1.feature.main.model.PostsResponse
 import com.example.nms_android_v1.feature.mypage.dto.ResponseMyPageDTO
 
 class MypageViewModel(
-    private val repository: MypageRepository
+    private val repository: MypageRepository,
     private val sp: StarRepository
 ) : ViewModel() {
 
