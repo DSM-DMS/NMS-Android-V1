@@ -10,7 +10,7 @@
             type="com.example.nms_android_v1.feature.post.ui.PostActivity" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
@@ -207,7 +207,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/view10">
+            app:layout_constraintTop_toBottomOf="@+id/clItem">
 
             <LinearLayout
                 android:id="@+id/lnLike"
@@ -266,18 +266,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/left_line"
@@ -315,11 +321,11 @@
                     android:id="@+id/et_chat"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:background="@drawable/et_chat"
                     android:hint="댓글을 입력하세요..."
+                    android:padding="7dp"
                     android:textColorHint="#707070"
                     android:textSize="14dp"
-                    android:padding="7dp"
-                    android:background="@drawable/et_chat"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -330,14 +336,14 @@
                     android:layout_width="24dp"
                     android:layout_height="19dp"
                     android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="게시"
+                    android:textColor="#4D91C6"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/et_chat"
-                    android:text="게시"
-                    android:textSize="13dp"
-                    android:fontFamily="@font/noto_sans_kr_medium"
-                    android:textColor="#4D91C6"/>
+                    app:layout_constraintTop_toTopOf="@+id/et_chat" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
