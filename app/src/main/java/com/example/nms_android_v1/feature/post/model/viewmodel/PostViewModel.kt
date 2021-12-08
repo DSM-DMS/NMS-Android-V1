@@ -8,13 +8,13 @@ import com.example.nms_android_v1.feature.mypage.dto.ResponseMyPageDTO
 import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 
 class PostViewModel (
-    private val repository: PostRepository,
-    private val sp: StarRepository
+    private val repository: PostRepository
 ) : ViewModel() {
 
-    val toastMessage : MutableLiveData<String> = MutableLiveData()
-    val failed : MutableLiveData<Boolean> = MutableLiveData()
-    val postData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
+    private val sp: StarRepository = StarRepository()
+    private val toastMessage : MutableLiveData<String> = MutableLiveData()
+    private val failed : MutableLiveData<Boolean> = MutableLiveData()
+    private val postData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
 
     fun getPostDetail() {
         repository.getPostDetail().subscribe { response ->
@@ -36,7 +36,7 @@ class PostViewModel (
         }
     }
 
-    fun unstar(noticeId: String) {
+    fun unStar(noticeId: String) {
         sp.star(noticeId).subscribe { response ->
             if(response.isSuccessful) {
                 toastMessage.value = "취소 성공"

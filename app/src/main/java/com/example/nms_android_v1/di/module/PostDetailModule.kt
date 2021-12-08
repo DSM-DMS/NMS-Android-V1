@@ -7,5 +7,5 @@ import org.koin.dsl.module
 
 val postModule = module {
     single { PostRepository() }
-    viewModel { PostViewModel(get()) }
+    viewModel { PostViewModel( get()) }
 }
