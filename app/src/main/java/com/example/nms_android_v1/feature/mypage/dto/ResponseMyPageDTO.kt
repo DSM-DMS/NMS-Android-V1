@@ -1,19 +1,12 @@
 package com.example.nms_android_v1.feature.mypage.dto
 
-data class ResponseMyPageDTO(
-    val nickname :  String,
-    val name : String,
-    val gcn : String,
-    val email : String,
-    val profile_url : String,
-    val likedNoticesValue: liked_notices_value
-)
+import com.google.gson.annotations.SerializedName
 
-data class liked_notices_value (
-    val id : String,
-    val title : String,
-    val writer :  String,
-    val department : String,
-    val created_date : String,
-    val image : String
+data class ResponseMyPageDTO(
+    @SerializedName("nickname") val nickname: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("gcn") val gcn: String,
+    @SerializedName("email") val email: String,
+    @SerializedName("profile_url") val profile_url: String,
+    @SerializedName("liked_notices_value") val likedNoticesValue: liked_notices_value
 )
