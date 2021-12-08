@@ -9,7 +9,7 @@ import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityLoginBinding
 import com.example.nms_android_v1.feature.login.model.LoginRequest
 import com.example.nms_android_v1.feature.login.viewmodel.LoginViewModel
-import com.example.nms_android_v1.feature.main.MainActivity
+import com.example.nms_android_v1.feature.main.ui.activity.MainActivity
 import com.example.nms_android_v1.feature.register.ui.RegisterActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
