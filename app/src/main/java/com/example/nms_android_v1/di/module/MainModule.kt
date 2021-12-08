@@ -7,7 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val mainModule = module {
-    factory { MainRepository() }
-    factory { StarRepository() }
+    single { MainRepository() }
+    single { StarRepository() }
     viewModel { MainViewModel(get(), get()) }
 }
