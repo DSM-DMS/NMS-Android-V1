@@ -9,7 +9,9 @@ import retrofit2.http.Header
 import retrofit2.http.Path
 
 interface PostApi {
-    @GET("notice/notice-id")
+
+    // 공지 사항 조회
+    @GET("notice/{notice-id}")
     fun getPostDetail(
         @Header("Authorization") access_token: String,
         @Path("notice_id") notice_id : Int

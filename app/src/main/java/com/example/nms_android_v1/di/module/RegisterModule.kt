@@ -8,6 +8,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val registerModule = module {
-    factory { RegisterRepository() }
+    single { RegisterRepository() }
     viewModel { RegisterViewModel(get()) }
 }

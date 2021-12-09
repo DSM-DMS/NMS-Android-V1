@@ -13,34 +13,11 @@ data class ResponsePostDTO(
     val is_star: Boolean,
     val star_count : Int,
     val comment_count : Int,
-    val comments : comments
+    val comments : List<comments>
 )
 
-data class writer(
-    val name: String,
-    val profile_url: String
-)
 
-data class targets(
-    val target: String
-)
 
-data class images(
-    val order_seq : Int,
-    val image_url : String
-)
 
-data class comments(
-    val id : Int,
-    val writer: writer,
-    val content : String,
-    val created_date: String,
-    val replies: replies
-)
 
-data class replies(
-    val id: Int,
-    val writer: writer,
-    val content: String,
-    val created_date: String
-)
+

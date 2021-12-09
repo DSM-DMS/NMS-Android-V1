@@ -3,6 +3,7 @@ package com.example.nms_android_v1.data.post
 import ACCESS_TOKEN
 import com.example.nms_android_v1.di.postApi
 import com.example.nms_android_v1.feature.main.model.PostsResponse
+import com.example.nms_android_v1.feature.mypage.adapter.LikePostAdapter
 import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.annotations.NonNull
@@ -11,9 +12,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Response
 
 class PostRepository {
-    fun getPostDetail() : @NonNull Single<Response<ResponsePostDTO>> =
-        // notice id 오류 방지를 위해 예시로 넣어둠
-        postApi.getPostDetail(ACCESS_TOKEN, notice_id = 123)
+    fun getPostDetail(notice_id: Int) : @NonNull Single<Response<ResponsePostDTO>> =
+        postApi.getPostDetail(ACCESS_TOKEN, notice_id)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 }
