@@ -10,6 +10,7 @@ import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 import android.content.Intent.getIntent
 
 import android.content.Intent
+import com.example.nms_android_v1.feature.post.dto.comments
 import com.example.nms_android_v1.feature.post.ui.PostActivity
 import kotlin.properties.Delegates
 
@@ -20,6 +21,7 @@ class PostViewModel (
     private val postActivity = PostActivity()
     private val sp: StarRepository = StarRepository()
     private val notice_id = postActivity.notice_id
+    val postChatData: MutableLiveData<comments> = MutableLiveData()
     val postDetailData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
     val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()

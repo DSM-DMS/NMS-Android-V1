@@ -85,8 +85,11 @@ import kotlin.properties.Delegates
              postDetailData.observe(this@PostActivity, {
                  setPostDetail(it)
                  setChat(it)
-                 setChatByChat(it)
              })
+
+             postChatData.observe(this@PostActivity){
+                 setChatByChat(it)
+             }
 
              failed.observe(this@PostActivity, {
                  showToast(it.toString())
