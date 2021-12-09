@@ -10,18 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.databinding.ListpostItemBinding
-import com.example.nms_android_v1.databinding.MainItemBinding
-import com.example.nms_android_v1.feature.main.adapter.MainAdapter
-import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
-import com.example.nms_android_v1.feature.mypage.dto.liked_notices_value
+import com.example.nms_android_v1.feature.mypage.dto.Liked_Notices_Value
 import com.example.nms_android_v1.feature.mypage.model.LikePostData
 import com.example.nms_android_v1.feature.post.model.viewmodel.PostViewModel
 import com.example.nms_android_v1.feature.post.ui.PostActivity
 
 class LikePostAdapter(
     private val context: Context,
-    private val LikePostData: List<liked_notices_value>,
+    private val LikePostData: List<Liked_Notices_Value>,
     private val vm: PostViewModel
 ) : RecyclerView.Adapter<LikePostAdapter.ViewHolder>() {
 
