@@ -10,6 +10,6 @@ import retrofit2.http.Header
 interface MypageApi {
     @GET("student")
     fun getMypage(
-        @Header("access_token") access_token: String
+        @Header("Authorization") access_token: String
     ) : Single<Response<ResponseMyPageDTO>>
 }
