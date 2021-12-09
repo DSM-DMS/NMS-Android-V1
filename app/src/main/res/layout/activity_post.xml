@@ -21,10 +21,14 @@
             android:id="@+id/clItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/ivPostProfile"
+                android:id="@+id/iv_image"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="20dp"
@@ -35,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvPostMemberName"
+                android:id="@+id/tv_writer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -46,7 +50,7 @@
                 android:textColor="#000000"
                 android:textSize="10dp"
                 android:textStyle="normal"
-                app:layout_constraintStart_toEndOf="@+id/ivPostProfile"
+                app:layout_constraintStart_toEndOf="@+id/iv_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -60,8 +64,8 @@
                 android:text="2021년 10월 20일(화) 12:20"
                 android:textColor="#707070"
                 android:textSize="9dp"
-                app:layout_constraintStart_toEndOf="@+id/ivPostProfile"
-                app:layout_constraintTop_toTopOf="@+id/tvPostMemberName" />
+                app:layout_constraintStart_toEndOf="@+id/iv_image"
+                app:layout_constraintTop_toTopOf="@+id/tv_writer" />
 
             <View
                 android:id="@+id/view6"
@@ -69,11 +73,11 @@
                 android:layout_height="17dp"
                 android:layout_marginTop="7dp"
                 android:background="@drawable/bg_item_top_border"
-                app:layout_constraintStart_toStartOf="@+id/ivPostProfile"
-                app:layout_constraintTop_toBottomOf="@+id/ivPostProfile" />
+                app:layout_constraintStart_toStartOf="@+id/iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image" />
 
             <TextView
-                android:id="@+id/tvPostPlace"
+                android:id="@+id/tv_target"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_kr_medium"
@@ -112,7 +116,7 @@
                 app:layout_constraintTop_toTopOf="@+id/sview6" />
 
             <TextView
-                android:id="@+id/tvPostTitle"
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_kr_medium"
@@ -124,7 +128,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view6" />
 
             <TextView
-                android:id="@+id/tvPostContent"
+                android:id="@+id/tv_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -133,7 +137,7 @@
                 android:textColor="#000000"
                 android:textSize="12dp"
                 android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="@+id/tvPostTitle"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
                 app:layout_constraintTop_toBottomOf="@+id/tvPostGrade" />
 
             <ImageView
@@ -148,7 +152,7 @@
                 android:background="@drawable/bg_item_image_border"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPostContent" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -160,7 +164,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
             <TextView
-                android:id="@+id/tvPostLiked"
+                android:id="@+id/tvStarCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -181,12 +185,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/noto_sans_kr_regular"
-                android:text="댓글 0"
+                android:text="댓글"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/tvComment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_marginLeft="4dp"
+                app:layout_constraintLeft_toRightOf="@id/tvPostCommtents"
+                app:layout_constraintTop_toTopOf="@+id/tvPostCommtents"
+                app:layout_constraintBottom_toBottomOf="@id/tvPostCommtents"/>
 
             <View
                 android:id="@+id/view10"
@@ -281,6 +299,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="33dp"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
