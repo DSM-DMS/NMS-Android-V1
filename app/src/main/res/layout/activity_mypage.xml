@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/numbername"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
@@ -95,7 +95,7 @@
                 app:layout_constraintTop_toTopOf="@id/iv_profile" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
@@ -106,7 +106,7 @@
                 android:textSize="14dp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
                 app:layout_constraintLeft_toRightOf="@id/iv_profile"
-                app:layout_constraintTop_toBottomOf="@id/numbername" />
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
             <ImageButton
                 android:id="@+id/profileedit"
