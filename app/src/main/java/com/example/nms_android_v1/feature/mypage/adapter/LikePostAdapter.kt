@@ -53,7 +53,7 @@ class LikePostAdapter(
                 totalItem.setOnClickListener {
                     val intent = Intent(holder.itemView.context, PostActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    intent.putExtra("noticeId", id)
+                    intent.putExtra("noticeId", notice_id)
                     holder.itemView.context.startActivity(intent)
                 }
             }
