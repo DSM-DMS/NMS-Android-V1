@@ -19,16 +19,15 @@ class PostViewModel (
 
     private val postActivity = PostActivity()
     private val sp: StarRepository = StarRepository()
-    private val toastMessage : MutableLiveData<String> = MutableLiveData()
-    private val failed : MutableLiveData<Boolean> = MutableLiveData()
-    private val postData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
+    private val notice_id = postActivity.notice_id
+    val postDetailData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
+    val toastMessage : MutableLiveData<String> = MutableLiveData()
+    val failed : MutableLiveData<Boolean> = MutableLiveData()
 
     fun getPostDetail() {
-        val notice_id = postActivity.notice_id
-
         repository.getPostDetail(notice_id).subscribe { response ->
             if(response.isSuccessful) {
-                postData.value = response.body()
+                postDetailData.value = response.body()
             } else {
                 failed.value = true
             }
