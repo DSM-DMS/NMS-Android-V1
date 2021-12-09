@@ -13,7 +13,6 @@ import retrofit2.Response
 
 class PostRepository {
     fun getPostDetail(notice_id: Int) : @NonNull Single<Response<ResponsePostDTO>> =
-        // notice id 오류 방지를 위해 예시로 넣어둠
         postApi.getPostDetail(ACCESS_TOKEN, notice_id)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())

@@ -27,5 +27,4 @@ abstract class BaseActivity<B: ViewDataBinding> (
     }
 
     abstract fun observeEvent()
-
 }
