@@ -15,11 +15,11 @@ import com.example.nms_android_v1.feature.post.ui.PostActivity
 import kotlin.properties.Delegates
 
 class PostViewModel (
-    private val repository: PostRepository
+    private val repository: PostRepository,
+    private val sp: StarRepository
 ) : ViewModel() {
 
     private val postActivity = PostActivity()
-    private val sp: StarRepository = StarRepository()
     private val notice_id = postActivity.notice_id
     val postChatData: MutableLiveData<comments> = MutableLiveData()
     val postDetailData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
