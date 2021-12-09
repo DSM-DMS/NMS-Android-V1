@@ -40,7 +40,7 @@ class PostChatAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         binding.run {
-            comments.get(position).run {
+            comments[position].run {
                 tvWriter.text = writer.name
                 tvContent.text = content
                 tvCreatedDate.text = created_date
