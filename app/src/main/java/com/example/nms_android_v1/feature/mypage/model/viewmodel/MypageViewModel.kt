@@ -13,12 +13,12 @@ class MypageViewModel(
 
     val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
-    val postData : MutableLiveData<ResponseMyPageDTO> = MutableLiveData()
+    val MypageData : MutableLiveData<ResponseMyPageDTO> = MutableLiveData()
 
-    fun mypage() {
+    fun myPage() {
         repository.getMyPage().subscribe { response ->
             if(response.isSuccessful) {
-                postData.value = response.body()
+                MypageData.value = response.body()
             } else {
                 failed.value = true
             }
