@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nms_android_v1">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".di.NmsApplication"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
-            android:name=".feature.profile.ProfileActivity"
+            android:name=".feature.profile.ui.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".feature.post.ui.PostActivity"
@@ -26,7 +26,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.StartActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".feature.main.ui.activity.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".feature.mypage.ui.MypageActivity"
             android:exported="false" />
