@@ -5,5 +5,6 @@ data class comments(
     val writer: writer,
     val content : String,
     val created_date: String,
-    val replies: replies
+    val reply_count: Int,
+    val replies: List<replies>
 )

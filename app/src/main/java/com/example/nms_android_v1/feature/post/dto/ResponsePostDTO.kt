@@ -13,7 +13,7 @@ data class ResponsePostDTO(
     val is_star: Boolean,
     val star_count : Int,
     val comment_count : Int,
-    val comments : comments
+    val comments : List<comments>
 )
 
 
