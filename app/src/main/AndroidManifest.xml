@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nms_android_v1">
+    package="com.example.nms_android_v1" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".di.NmsApplication"
         android:allowBackup="true"
         android:icon="@drawable/nms_logo"
         android:label="NMS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
+        android:theme="@style/Theme.Design.NoActionBar" >
         <activity
-            android:name=".feature.profile.ProfileActivity"
+            android:name=".feature.mypage.ui.MyInformationActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.post.PostActivity"
+            android:name=".feature.profile.ui.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.register.RegisterActivity"
+            android:name=".feature.post.ui.PostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.register.ui.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".feature.login.ui.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.StartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".feature.main.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".feature.mypage.MypageActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".feature.main.ui.activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.mypage.ui.MypageActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

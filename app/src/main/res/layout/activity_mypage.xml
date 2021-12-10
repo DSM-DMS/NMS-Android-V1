@@ -1,123 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".feature.mypage.MypageActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/left_line"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.08" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_line"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.117" />
-
-    <ImageView
-        android:id="@+id/toplogo"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/nms_logonms"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/bt_home"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:src="@drawable/home_btn_black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="6dp"
-        android:background="#D1CACA"
-        app:layout_constraintTop_toBottomOf="@+id/toplogo" />
+    <data>
+        <variable
+            name="activity"
+            type="com.example.nms_android_v1.feature.mypage.ui.MypageActivity" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="@id/left_line"
-        app:layout_constraintTop_toTopOf="@id/top_line">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".feature.mypage.ui.MypageActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.117" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_line"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9455555" />
 
         <ImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="2dp"
-            android:src="@drawable/mypage_profile_example"
+            android:id="@+id/toplogo"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/nms_logonms"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/bt_home"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:src="@drawable/home_btn_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:background="#D1CACA"
+            app:layout_constraintTop_toBottomOf="@+id/toplogo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/left_line"
+            app:layout_constraintRight_toRightOf="@id/right_line"
+            app:layout_constraintTop_toTopOf="@id/top_line">
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/mypage_profile_example"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="-4dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:text="1213 유현명"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintLeft_toRightOf="@id/iv_profile"
+                app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/noto_sans_kr_regular"
+                android:text="aahspringaa4@naver.com"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                app:layout_constraintLeft_toRightOf="@id/iv_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <ImageButton
+                android:id="@+id/profileedit"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/profileedit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_line3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2779" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_line4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.39" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_line2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
 
         <TextView
-            android:id="@+id/numbername"
+            android:id="@+id/like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:text="1213 유현명"
-            android:layout_marginTop="-4dp"
-            android:textColor="@color/black"
-            android:textSize="14dp"
-            app:layout_constraintTop_toTopOf="@id/iv_profile"
-            app:layout_constraintLeft_toRightOf="@id/iv_profile" />
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="-10dp"
             android:fontFamily="@font/noto_sans_kr_regular"
-            android:text="aahspringaa4@naver.com"
+            android:text="좋아하는 게시물"
             android:textColor="@color/black"
-            android:textSize="14dp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
-            app:layout_constraintLeft_toRightOf="@id/iv_profile"
-            app:layout_constraintTop_toBottomOf="@id/numbername" />
+            android:textSize="13dp"
+            app:layout_constraintLeft_toLeftOf="@id/left_line"
+            app:layout_constraintTop_toTopOf="@id/top_line3" />
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:background="#D1CACA"
+            app:layout_constraintTop_toBottomOf="@id/like" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/left_line2"
+            app:layout_constraintRight_toRightOf="@id/right"
+            app:layout_constraintTop_toTopOf="@id/top_line4"
+            tools:listitem="@layout/listpost_item" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_line3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2779"/>
-
-    <TextView
-        android:id="@+id/like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="좋아하는 게시물"
-        android:textSize="13dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/noto_sans_kr_regular"
-        app:layout_constraintTop_toTopOf="@id/top_line3"
-        app:layout_constraintLeft_toLeftOf="@id/left_line"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="3dp"
-        android:background="#D1CACA"
-        app:layout_constraintTop_toBottomOf="@id/like"/>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

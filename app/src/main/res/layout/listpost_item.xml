@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.nms_android_v1.feature.mypage.dto.Liked_Notices_Value" />
+    </data>
+    <GridLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="165dp"
+        android:layout_height="175dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/total_item"
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            android:orientation="vertical"
+            android:background="@drawable/likepostitembottom">
+
+            <ImageView
+                android:id="@+id/likephoto"
+                android:layout_width="155dp"
+                android:layout_height="105dp" />
+
+            <LinearLayout
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="139dp"
+                    android:layout_height="26dp"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="left"
+                    android:text="애들아 급식 알려줄께"
+                    android:textColor="@color/black"
+                    android:textSize="9dp" />
+
+                <TextView
+                    android:id="@+id/tv_writer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:gravity="right"
+                    android:text="장성혜(마이스터부)"
+                    android:textColor="#707070"
+                    android:textSize="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_created_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021년 10월 19일(월) 12:20"
+            android:textSize="9dp"
+            android:textColor="#707070"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/noto_sans_kr_regular"/>
+    </GridLayout>
+</layout>
