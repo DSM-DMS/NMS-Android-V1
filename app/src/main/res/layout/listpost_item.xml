@@ -4,7 +4,7 @@
     <data>
         <variable
             name="item"
-            type="com.example.nms_android_v1.feature.mypage.dto.liked_notices_value" />
+            type="com.example.nms_android_v1.feature.mypage.dto.Liked_Notices_Value" />
     </data>
     <GridLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
