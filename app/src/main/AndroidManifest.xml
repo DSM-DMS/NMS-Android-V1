@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nms_android_v1">
+    package="com.example.nms_android_v1" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,10 @@
         android:label="NMS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
+        android:theme="@style/Theme.Design.NoActionBar" >
+        <activity
+            android:name=".feature.mypage.ui.MyInformationActivity"
+            android:exported="false" />
         <activity
             android:name=".feature.profile.ui.ProfileActivity"
             android:exported="false" />
@@ -26,7 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.StartActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
