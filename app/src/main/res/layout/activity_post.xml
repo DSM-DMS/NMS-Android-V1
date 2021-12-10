@@ -359,7 +359,8 @@
                 android:src="@drawable/bg_circle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
@@ -394,8 +395,9 @@
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/et_chat" />
+                    app:layout_constraintTop_toTopOf="@+id/et_chat"
+                    android:layout_marginRight="18dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>œ
+</layout>

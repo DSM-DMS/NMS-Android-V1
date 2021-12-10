@@ -61,8 +61,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
-            android:visibility="gone
-"
+            android:visibility="gone"
             android:id="@+id/etRgSecond"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
