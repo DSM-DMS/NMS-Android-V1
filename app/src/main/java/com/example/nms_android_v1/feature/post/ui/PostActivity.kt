@@ -7,18 +7,12 @@ import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityPostBinding
 import com.example.nms_android_v1.databinding.ChatItemBinding
-import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.model.PostsResponse
 import com.example.nms_android_v1.feature.mypage.adapter.LikePostAdapter
 import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 import com.example.nms_android_v1.feature.post.dto.comments
 import com.example.nms_android_v1.feature.post.dto.replies
-import com.example.nms_android_v1.feature.post.dto.writer
-import com.example.nms_android_v1.feature.post.model.PostData
 import com.example.nms_android_v1.feature.post.model.viewmodel.PostViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.lang.System.load
-import java.util.ServiceLoader.load
 import kotlin.properties.Delegates
 
  class PostActivity : BaseActivity<ActivityPostBinding>(

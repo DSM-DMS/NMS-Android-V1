@@ -8,6 +8,7 @@
         android:name=".di.NmsApplication"
         android:allowBackup="true"
         android:icon="@drawable/nms_logo"
+        android:usesCleartextTraffic="true"
         android:label="NMS"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"

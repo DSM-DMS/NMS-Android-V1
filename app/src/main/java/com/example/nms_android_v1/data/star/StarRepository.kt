@@ -16,12 +16,13 @@ import retrofit2.Response
 class StarRepository {
 
     fun star(noticeId: String) : @NonNull Single<Response<Void>> =
-        starApi.star(noticeId, ACCESS_TOKEN)
+        starApi.star(ACCESS_TOKEN, noticeId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
-    fun unStar(noticeId: String) : @NonNull Single<Response<Void>> =
-        starApi.unstar(noticeId, ACCESS_TOKEN)
+
+    fun unstar(noticeId: String) : @NonNull Single<Response<Void>> =
+        starApi.unstar(ACCESS_TOKEN, noticeId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
