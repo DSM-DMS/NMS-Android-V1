@@ -53,7 +53,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         binding.rvMain.setHasFixedSize(true)
         binding.rvMain.adapter = MainAdapter(applicationContext, postList, vm)
 
-//        vm.getPosts()
+        vm.getPosts()
     }
 
     private fun setPosts(postsResponse: PostsResponse) {

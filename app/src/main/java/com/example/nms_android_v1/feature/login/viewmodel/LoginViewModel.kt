@@ -18,7 +18,7 @@ class LoginViewModel(
     fun login(loginRequest: LoginRequest) {
         rp.login(loginRequest).subscribe { response ->
             if(response.isSuccessful) {
-                ACCESS_TOKEN = response.body()?.accessToken.toString()
+                ACCESS_TOKEN = "Bearer " + response.body()?.accessToken.toString()
                 REFRESH_TOKEN = response.body()?.refreshToken.toString()
                 success.value = true
             } else {
