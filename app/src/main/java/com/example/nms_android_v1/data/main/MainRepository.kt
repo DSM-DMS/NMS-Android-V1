@@ -1,7 +1,6 @@
 package com.example.nms_android_v1.data.main
 
 import ACCESS_TOKEN
-import REFRESH_TOKEN
 import com.example.nms_android_v1.di.mainApi
 import com.example.nms_android_v1.feature.main.model.PostsResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

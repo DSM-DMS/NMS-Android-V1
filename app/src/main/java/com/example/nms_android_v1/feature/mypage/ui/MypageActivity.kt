@@ -6,13 +6,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityMypageBinding
-import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.model.PostsResponse
 import com.example.nms_android_v1.feature.mypage.adapter.LikePostAdapter
 import com.example.nms_android_v1.feature.mypage.dto.ResponseMyPageDTO
 import com.example.nms_android_v1.feature.mypage.model.viewmodel.MypageViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import retrofit2.Response
 
 
 class MypageActivity : BaseActivity<ActivityMypageBinding>(

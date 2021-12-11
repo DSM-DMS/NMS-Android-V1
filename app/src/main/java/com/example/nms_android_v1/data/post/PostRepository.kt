@@ -2,8 +2,6 @@ package com.example.nms_android_v1.data.post
 
 import ACCESS_TOKEN
 import com.example.nms_android_v1.di.postApi
-import com.example.nms_android_v1.feature.main.model.PostsResponse
-import com.example.nms_android_v1.feature.mypage.adapter.LikePostAdapter
 import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.annotations.NonNull
