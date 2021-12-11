@@ -95,6 +95,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun setPosts(postsResponse: PostsResponse) {
+        postList.clear()
         for(i: Int in 0..postsResponse.notice_count-1) {
             postList.add(postsResponse.notices.get(i))
         }
