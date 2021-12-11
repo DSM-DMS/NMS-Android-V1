@@ -20,6 +20,7 @@ class StarRepository {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 
+
     fun unstar(noticeId: String) : @NonNull Single<Response<Void>> =
         starApi.unstar(ACCESS_TOKEN, noticeId)
             .observeOn(AndroidSchedulers.mainThread())

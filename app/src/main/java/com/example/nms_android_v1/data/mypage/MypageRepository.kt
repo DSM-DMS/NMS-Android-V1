@@ -14,4 +14,9 @@ class MypageRepository {
         mypageApi.getMypage(ACCESS_TOKEN)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
+
+    fun getInformation() : @NonNull Single<Response<ResponseMyPageDTO>> =
+        mypageApi.getMypage(ACCESS_TOKEN)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
 }
