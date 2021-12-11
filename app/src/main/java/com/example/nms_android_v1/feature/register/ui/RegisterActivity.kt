@@ -32,12 +32,14 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     var password: String ?= null
     var email: String ?= null
 
+    var page = 1
+
     var emailCertified: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        nickName()
+        movePage(1)
     }
 
     private fun setTextWatcher() {
@@ -56,19 +58,55 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         })
     }
 
+    private fun movePage(page: Int) {
+        viewGone()
+        when(page) {
+            1 -> {
+                nickName()
+                binding.ivBack.setImageResource(R.drawable.ic_cancel)
+                binding.ivBack.setOnClickListener {
+                    finish()
+                }
+            }
+            2 -> {
+                name()
+                binding.ivBack.setImageResource(R.drawable.ic_back)
+                binding.ivBack.setOnClickListener {
+                    movePage(--this.page)
+                }
+            }
+            3 -> numberGrade()
+            4 -> password()
+            5 -> email()
+            6 -> certifiedEmail()
+            7 -> success()
+            else -> nickName()
+        }
+    }
+
+    private fun viewGone() {
+        binding.run {
+            etRgFirst.text = null
+            etRgSecond.text = null
+            spinnerGrade.visibility = View.GONE
+            tvSpinnerGrade.visibility = View.GONE
+            spinnerIg.visibility = View.GONE
+            etRgSecond.visibility = View.GONE
+        }
+    }
+
     private fun nickName() {
         emailCertified = 0;
 
         setTextWatcher()
 
-        binding.etRgFirst.visibility = View.VISIBLE
         binding.etRgFirst.hint = "닉네임"
 
         binding.btnNext.setOnClickListener {
             nickname = binding.etRgFirst.text.toString()
 
             if(nickname.isNullOrEmpty()) showToast("닉네임을 입력해주세요.")
-            else name()
+            else movePage(++page)
          }
 
     }
@@ -76,21 +114,19 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun name() {
         setTextWatcher()
 
-        binding.etRgFirst.text = null
         binding.etRgFirst.hint = "이름"
 
         binding.btnNext.setOnClickListener {
             name = binding.etRgFirst.text.toString()
 
             if(name.isNullOrEmpty()) showToast("이름을 입력해주세요.")
-            else numberGrade()
+            else movePage(++page)
         }
     }
 
     private fun numberGrade() {
         setTextWatcher()
 
-        binding.etRgFirst.text = null
         binding.etRgFirst.hint = "학번 (ex.1117)"
 
         val itemList = listOf("1학년", "2학년", "3학년")
@@ -120,8 +156,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         binding.btnNext.setOnClickListener {
             number = binding.etRgFirst.text.toString()
 
-            classNum = number!!.substring(1, 1)
-            number = number!!.substring(2, 3)
+            classNum = number!!.substring(1, 2)
+            number = number!!.substring(2, 4)
 
             if(number.isNullOrEmpty()) {
                 showToast("학번을 입력해주세요.")
@@ -132,7 +168,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 return@setOnClickListener
             }
 
-            password()
+            movePage(++page)
         }
 
     }
@@ -140,37 +176,29 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun password() {
         setTextWatcher()
 
-        binding.spinnerGrade.visibility = View.GONE
-        binding.tvSpinnerGrade.visibility = View.GONE
-        binding.spinnerIg.visibility = View.GONE
-
-        binding.etRgFirst.text = null
         binding.etRgFirst.hint = "비밀번호"
 
         binding.etRgSecond.visibility = View.VISIBLE
-        binding.etRgSecond.text = null
 
         binding.btnNext.setOnClickListener {
             password = binding.etRgFirst.text.toString()
             val passwordCheck = binding.etRgSecond.text.toString()
             if(password == passwordCheck) {
-                email()
+                movePage(++page)
             }
         }
 
     }
 
     private fun email() {
-        binding.etRgFirst.text = null
         binding.etRgFirst.hint = "이메일 (학교 이메일을 입력해주세요)"
         binding.btnNext.text = "인증번호 요청"
-        binding.etRgSecond.visibility = View.GONE
 
         binding.btnNext.setOnClickListener {
             email = binding.etRgFirst.text.toString()
 
             if(email.isNullOrEmpty()) showToast("이메일을 입력해주세요.")
-            else certifiedEmail()
+            else movePage(++page)
         }
     }
 
