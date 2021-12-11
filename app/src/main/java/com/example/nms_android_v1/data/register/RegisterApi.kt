@@ -13,7 +13,7 @@ import retrofit2.http.PUT
 interface RegisterApi {
 
     // register
-    @GET("join")
+    @POST("join")
     fun register(
         @Body registerRequest: RegisterRequest
     ) : Single<Response<Void>>
