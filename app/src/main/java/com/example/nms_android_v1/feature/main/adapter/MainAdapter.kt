@@ -58,6 +58,7 @@ class MainAdapter(
                 clItem.setOnClickListener {
                     var intent = Intent(holder.itemView.context, PostActivity::class.java)
                     intent.putExtra("noticeId", notice_id)
+                    intent.putExtra("teacherId", writer.id)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     ContextCompat.startActivity(holder.itemView.context, intent, null)
                 }
