@@ -13,6 +13,7 @@ import com.example.nms_android_v1.feature.main.model.Notice
 import com.example.nms_android_v1.feature.main.model.PostsResponse
 import com.example.nms_android_v1.feature.main.ui.fragment.BottomDialogFragment
 import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
+import com.example.nms_android_v1.feature.mypage.ui.MypageActivity
 import com.example.nms_android_v1.feature.post.ui.PostActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import io.reactivex.rxjava3.exceptions.UndeliverableException
@@ -34,9 +35,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.button.setOnClickListener {
-            startActivity(Intent(this, PostActivity::class.java))
+        binding.imageButton.setOnClickListener {
+            startActivity(Intent(this, MypageActivity::class.java))
         }
+        
         RxJavaPlugins.setErrorHandler { e ->
             var error = e
             if (error is UndeliverableException) {
