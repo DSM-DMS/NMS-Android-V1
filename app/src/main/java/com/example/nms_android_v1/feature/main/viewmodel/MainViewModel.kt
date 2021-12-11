@@ -47,7 +47,7 @@ class MainViewModel(
         }
     }
 
-    fun unstar(noticeId: String) {
+    fun unStar(noticeId: String) {
         sp.star(noticeId).subscribe { response ->
             if(response.isSuccessful) {
                 toastMessage.value = "취소 성공"
