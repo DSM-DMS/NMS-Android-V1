@@ -1,6 +1,7 @@
  package com.example.nms_android_v1.feature.post.ui
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nms_android_v1.R
@@ -29,23 +30,24 @@ import kotlin.properties.Delegates
      private lateinit var gridLayoutManager: GridLayoutManager
      private lateinit var PostData: ResponsePostDTO
 
-     var notice_id by Delegates.notNull<Int>()
+     private lateinit var binding2: ChatItemBinding
 
-     private var binding2: ChatItemBinding = ChatItemBinding.inflate(layoutInflater)
+     companion object {
+         var noticeId: Int = 0
+     }
 
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
 
-         val intent = intent
-         intent.getIntExtra("noticeId", notice_id)
+         noticeId = intent.getIntExtra("noticeId", noticeId)
 
          vm.getPostDetail()
 
          binding.lnLike.setOnClickListener{
              if(PostData.is_star) {
-                 vm.unStar(notice_id.toString())
+                 vm.unStar(noticeId.toString())
              } else {
-                 vm.star(notice_id.toString())
+                 vm.star(noticeId.toString())
              }
          }
      }
@@ -74,6 +76,7 @@ import kotlin.properties.Delegates
          binding.tvCommentCount.text = responsePostDTO.comment_count.toString()
          binding.tvStarCount.text = responsePostDTO.star_count.toString()
      }
+
      override fun observeEvent() {
          vm.run {
              postDetailData.observe(this@PostActivity, {

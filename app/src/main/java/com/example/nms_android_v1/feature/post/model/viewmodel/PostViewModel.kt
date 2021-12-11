@@ -19,12 +19,17 @@ class PostViewModel (
 ) : ViewModel() {
 
     private val sp: StarRepository = StarRepository()
-    private val postActivity = PostActivity()
-    private val notice_id = postActivity.notice_id
+
+    private val notice_id = PostActivity.noticeId
+
     val postChatData: MutableLiveData<comments> = MutableLiveData()
+
     val postDetailData : MutableLiveData<ResponsePostDTO> = MutableLiveData()
+
     val toastMessage : MutableLiveData<String> = MutableLiveData()
+
     val failed : MutableLiveData<Boolean> = MutableLiveData()
+
 
     fun getPostDetail() {
         repository.getPostDetail(notice_id).subscribe { response ->
