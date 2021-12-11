@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 
 interface MypageApi {
-    @GET("student")
+    @GET("student/mypage")
     fun getMypage(
         @Header("Authorization") access_token: String
     ) : Single<Response<ResponseMyPageDTO>>

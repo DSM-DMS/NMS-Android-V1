@@ -58,7 +58,7 @@ class MainAdapter(
 
                 lnLike.setOnClickListener {
                     if(is_star) {
-                        vm.unstar(notice_id.toString())
+                        vm.unStar(notice_id.toString())
                     } else {
                         vm.star(notice_id.toString())
                     }
