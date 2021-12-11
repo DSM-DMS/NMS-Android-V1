@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.feature.main.model.BottomDialog.BottomDialogData
 import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
-import com.example.nms_android_v1.feature.main.model.Notices
-import com.example.nms_android_v1.feature.main.model.Writer
 
 class BottomSheetAdapter(
     var data: MutableList<BottomDialogData> = ArrayList(),

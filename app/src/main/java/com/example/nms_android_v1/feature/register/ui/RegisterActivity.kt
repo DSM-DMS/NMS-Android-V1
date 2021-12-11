@@ -14,7 +14,9 @@ import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityRegisterBinding
 import com.example.nms_android_v1.feature.register.viewmodel.RegisterViewModel
+import io.reactivex.rxjava3.annotations.NonNull
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.log
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -24,10 +26,13 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     var nickname: String ?= null
     var name: String ?= null
-    var number: String ?= null
     var grade: String ?= null
+    var classNum: String ?= null
+    var number: String ?= null
     var password: String ?= null
     var email: String ?= null
+
+    var emailCertified: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +57,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     }
 
     private fun nickName() {
+        emailCertified = 0;
+
         setTextWatcher()
 
         binding.etRgFirst.visibility = View.VISIBLE
@@ -99,7 +106,11 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 binding.tvSpinnerGrade.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
                 binding.tvSpinnerGrade.text = itemList[p2]
 
-                grade = p2.toString()
+                when(p2) {
+                    0 -> grade = "FIRST"
+                    1 -> grade = "SECOND"
+                    2 -> grade = "THIRD"
+                }
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -108,6 +119,9 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
         binding.btnNext.setOnClickListener {
             number = binding.etRgFirst.text.toString()
+
+            classNum = number!!.substring(1, 1)
+            number = number!!.substring(2, 3)
 
             if(number.isNullOrEmpty()) {
                 showToast("학번을 입력해주세요.")
@@ -149,25 +163,69 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun email() {
         binding.etRgFirst.text = null
         binding.etRgFirst.hint = "이메일 (학교 이메일을 입력해주세요)"
+        binding.btnNext.text = "인증번호 요청"
         binding.etRgSecond.visibility = View.GONE
 
         binding.btnNext.setOnClickListener {
             email = binding.etRgFirst.text.toString()
 
             if(email.isNullOrEmpty()) showToast("이메일을 입력해주세요.")
-            else success()
+            else certifiedEmail()
+        }
+    }
+
+    private fun certifiedEmail() {
+        binding.etRgFirst.text = null
+        binding.etRgFirst.hint = "인증번호 입력"
+        binding.btnNext.text = "인증"
+        binding.tvEmail.visibility = View.VISIBLE
+        binding.textView4.visibility = View.VISIBLE
+        binding.textView5.visibility = View.VISIBLE
+
+        vm.sendEmailCertified(email!!)
+
+        binding.btnNext.setOnClickListener {
+            val code = binding.etRgFirst.text.toString()
+
+            if(code.isNullOrEmpty()) {
+                showToast("인증번호를 입력해주세요!")
+            } else {
+                vm.checkEmailCertified(email!!, code)
+            }
         }
 
+        binding.textView5.setOnClickListener {
+            if(emailCertified != 3) {
+                showToast("${email}로 인증번호를 재전송하였습니다.")
+                vm.sendEmailCertified(email!!)
+                emailCertified++
+            } else {
+                showToast("인증번호 재전송 가능 횟수를 초과하셨습니다.\n다시 회원가입을 시도해주세요!")
+            }
+        }
     }
 
     private fun success() {
-        showToast("완료")
-//        vm.register(nickname!!, name!!, password!!, grade!!, email!!)
+        vm.register(nickname!!, name!!, grade!!, classNum!!, number!!, password!!, email!!)
     }
 
 
     override fun observeEvent() {
         vm.run {
+            checkSuccess.observe(this@RegisterActivity, {
+                it.run {
+                    success()
+                }
+            })
+
+            checkFailed.observe(this@RegisterActivity, {
+                showToast("인증번호가 일치하지 않습니다.")
+            })
+
+            errorMessage.observe(this@RegisterActivity, {
+                showToast(it)
+            })
+
             success.observe(this@RegisterActivity, {
                 it.run {
                     showToast("회원가입에 성공하셨습니다.")
@@ -177,7 +235,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
             failed.observe(this@RegisterActivity, {
                 it.run {
-                    showToast("회원가입에 실패하셨습니다.")
+                    showToast("회원가입에 실패하셨습니다.\n다시 시도해주세요!")
                     finish()
                 }
             })
