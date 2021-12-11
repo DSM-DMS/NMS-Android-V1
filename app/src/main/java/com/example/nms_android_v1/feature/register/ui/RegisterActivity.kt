@@ -263,7 +263,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
             failed.observe(this@RegisterActivity, {
                 it.run {
-                    showToast("회원가입에 실패하셨습니다.\n다시 시도해주세요!")
+                    showToast(it)
                     finish()
                 }
             })

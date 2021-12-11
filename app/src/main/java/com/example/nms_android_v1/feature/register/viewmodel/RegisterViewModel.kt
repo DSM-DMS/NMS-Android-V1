@@ -18,7 +18,7 @@ class RegisterViewModel(
 ) : ViewModel() {
 
     val success : MutableLiveData<Boolean> = MutableLiveData()
-    val failed : MutableLiveData<Boolean> = MutableLiveData()
+    val failed : MutableLiveData<String> = MutableLiveData()
     val errorMessage : MutableLiveData<String> = MutableLiveData()
     val checkSuccess : MutableLiveData<Boolean> = MutableLiveData()
     val checkFailed : MutableLiveData<Boolean> = MutableLiveData()
@@ -29,7 +29,10 @@ class RegisterViewModel(
             if(response.isSuccessful) {
                 success.value = true
             } else {
-                failed.value = true
+                when(response.code()) {
+                    409 -> failed.value = "이미 존재하는 계정입니다."
+                    else -> failed.value = "회원가입에 실패했습니다."
+                }
             }
         }
     }
