@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityLoginBinding
