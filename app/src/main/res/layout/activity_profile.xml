@@ -67,8 +67,8 @@
 
             <TextView
                 android:id="@+id/tv_toptitle"
-                android:layout_width="140dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:text="네트상태를 확인해 주세요"
                 android:textSize="16dp"
