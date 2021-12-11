@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface MainApi {
     // 전체 공지사항 조회
-    @GET("notice")
+    @GET("notice/all")
     fun getPosts(
         @Header("Authorization") accessToken: String
     ) : Single<Response<PostsResponse>>

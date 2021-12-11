@@ -6,10 +6,11 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 interface LoginApi {
 
-    @GET("auth")
+    @POST("student/auth")
     fun login(
         @Body loginRequest: LoginRequest
     ) : Single<Response<LoginResponse>>
