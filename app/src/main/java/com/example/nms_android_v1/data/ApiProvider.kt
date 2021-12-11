@@ -5,6 +5,7 @@ import com.example.nms_android_v1.data.login.LoginApi
 import com.example.nms_android_v1.data.main.MainApi
 import com.example.nms_android_v1.data.mypage.MypageApi
 import com.example.nms_android_v1.data.post.PostApi
+import com.example.nms_android_v1.data.profile.ProfileApi
 import com.example.nms_android_v1.data.register.RegisterApi
 import com.example.nms_android_v1.data.star.StarApi
 import retrofit2.Retrofit
@@ -40,4 +41,8 @@ val mypageApi : MypageApi by lazy {
 
 val postApi : PostApi by lazy {
     retrofit.create(PostApi::class.java)
+}
+
+val profileApi: ProfileApi by lazy{
+    retrofit.create(ProfileApi::class.java)
 }
