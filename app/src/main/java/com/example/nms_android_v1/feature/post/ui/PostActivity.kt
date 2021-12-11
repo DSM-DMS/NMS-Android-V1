@@ -37,7 +37,7 @@ import kotlin.properties.Delegates
          super.onCreate(savedInstanceState)
 
          val intent = intent
-         intent.getIntExtra("notice_id", notice_id)
+         intent.getIntExtra("noticeId", notice_id)
 
          vm.getPostDetail()
 
