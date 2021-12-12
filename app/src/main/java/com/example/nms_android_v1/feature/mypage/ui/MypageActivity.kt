@@ -18,14 +18,13 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
 
     private val vm: MypageViewModel by viewModel()
 
-    private lateinit var rv: RecyclerView
     private lateinit var MypageAdpater: LikePostAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false)
-        rv.layoutManager = gridLayoutManager
+        binding.rvMyPage.layoutManager = gridLayoutManager
     }
 
     private fun setMypage(ResponseMyPage: ResponseMyPageDTO) {
