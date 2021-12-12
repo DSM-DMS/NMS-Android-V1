@@ -1,8 +1,8 @@
 package com.example.nms_android_v1.data.register
 
 import com.example.nms_android_v1.di.registerApi
-import com.example.nms_android_v1.feature.login.model.CheckEmailCertifiedRequest
-import com.example.nms_android_v1.feature.login.model.SendEmailCertifiedRequest
+import com.example.nms_android_v1.feature.register.model.CheckEmailCertifiedRequest
+import com.example.nms_android_v1.feature.register.model.SendEmailCertifiedRequest
 import com.example.nms_android_v1.feature.register.model.RegisterRequest
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.annotations.NonNull
