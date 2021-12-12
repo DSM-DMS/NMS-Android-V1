@@ -103,13 +103,12 @@ import kotlin.properties.Delegates
              Log.d("error","10")
                  postDetailData.observe(this@PostActivity, {
                  setPostDetail(it)
-                 setChat(it)
                  Log.d("error", "1")
              })
 
-//             postChatData.observe(this@PostActivity){
+             postChatData.observe(this@PostActivity){
 //                 setChatByChat(it)
-//             }
+             }
 
              toastMessage.observe(this@PostActivity, {
                  showToast(it.toString())
