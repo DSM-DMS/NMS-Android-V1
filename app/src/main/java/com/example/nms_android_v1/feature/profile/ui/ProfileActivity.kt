@@ -7,6 +7,7 @@ import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityPostBinding
 import com.example.nms_android_v1.databinding.ActivityProfileBinding
+import com.example.nms_android_v1.feature.post.ui.PostActivity
 import com.example.nms_android_v1.feature.profile.dto.ResponseProfileDTO
 import com.example.nms_android_v1.feature.profile.viewmodel.ProfileViewModel
 import kotlin.properties.Delegates
@@ -16,13 +17,18 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(
     R.layout.activity_profile
 ) {
 
-    val id by Delegates.notNull<Int>()
     private val vm: ProfileViewModel by viewModel()
+
+    companion object {
+        var teacherId: Int = 0
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val intent = intent
-        intent.getIntExtra("teacherId", id)
+        vm.getProfile()
+
+        teacherId = intent.getIntExtra("teacherId", teacherId)
     }
 
     private fun setProfile(responseProfileDTO: ResponseProfileDTO){
@@ -32,6 +38,7 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(
         binding.tvIntroduce.text = responseProfileDTO.introduce
         binding.tvClass.text = responseProfileDTO.department
     }
+
     override fun observeEvent() {
         vm.run {
             profileData.observe(this@ProfileActivity, {
