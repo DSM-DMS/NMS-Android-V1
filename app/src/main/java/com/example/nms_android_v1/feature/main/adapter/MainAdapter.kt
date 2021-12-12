@@ -30,8 +30,10 @@ class MainAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        binding = DataBindingUtil.inflate<MainItemBinding>(LayoutInflater.from(parent.context),
-        R.layout.main_item, parent, false)
+        binding = DataBindingUtil.inflate<MainItemBinding>(
+            LayoutInflater.from(parent.context),
+            R.layout.main_item, parent, false
+        )
 
 
         return Holder(binding.root)
@@ -42,7 +44,7 @@ class MainAdapter(
         Log.d("Main", "onBindViewHolder: ${productData.get(position)}")
         binding.run {
             productData.get(position).run {
-                if(!(writer.profile_url.isNullOrEmpty())) {
+                if (!(writer.profile_url.isNullOrEmpty())) {
                     Glide.with(holder.itemView.context)
                         .load(writer.profile_url)
                         .into(ivPostProfile)
@@ -66,6 +68,28 @@ class MainAdapter(
                 lnLike.setOnClickListener {
                     vm.star(notice_id.toString())
                 }
+
+                if (targets.size >= 1) {
+                    tvType1.visibility = View.VISIBLE
+                    tvType1.text = getName(targets.get(0))
+                }
+
+                if (targets.size >= 2) {
+                    tvType2.visibility = View.VISIBLE
+                    tvType2.text = getName(targets.get(1))
+                }
+
+                if (targets.size >= 3) {
+                    tvType3.visibility = View.VISIBLE
+                    tvType3.text = getName(targets.get(2))
+                }
+
+                if (targets.size >= 4) {
+                    tvType4.visibility = View.VISIBLE
+                    tvType4.text = getName(targets.get(3))
+                }
+
+
             }
         }
 
@@ -73,6 +97,17 @@ class MainAdapter(
 
     override fun getItemCount(): Int {
         return productData.size
+    }
+
+    fun getName(name: String) : String {
+        when (name) {
+            "SCHOOL" -> return "교내"
+            "SUBURBS" -> return "교외"
+            "GRADE_FIRST" -> return "1학년"
+            "GRADE_SECOND" -> return "2학년"
+            "GRADE_THIRD" -> return "3학년"
+        }
+        return "default"
     }
 
     fun setLikeOn() {
