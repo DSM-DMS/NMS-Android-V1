@@ -18,9 +18,7 @@ import com.example.nms_android_v1.feature.post.model.viewmodel.PostViewModel
 import com.example.nms_android_v1.feature.post.ui.PostActivity
 
 class PostChatAdapter (
-    private val context: Context,
     private val comments: List<comments>,
-    private val vm: PostViewModel
 ) :
     RecyclerView.Adapter<PostChatAdapter.ViewHolder>() {
 

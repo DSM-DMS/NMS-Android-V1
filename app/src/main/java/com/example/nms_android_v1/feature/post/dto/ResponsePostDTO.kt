@@ -6,11 +6,8 @@ data class ResponsePostDTO(
     val title: String,
     val content: String,
     val writer: writer,
-    val target: targets,
     val created_date : String,
-    val update_date: String,
-    val images: images,
-    val is_star: Boolean,
+    val updated_date: String,
     val star_count : Int,
     val comment_count : Int,
     val comments : List<comments>

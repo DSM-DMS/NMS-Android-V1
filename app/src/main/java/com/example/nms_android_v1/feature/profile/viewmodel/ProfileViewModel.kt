@@ -11,8 +11,7 @@ class ProfileViewModel(
     private val repository: ProfileRepository,
 ) : ViewModel() {
 
-    private val profileActivity = ProfileActivity()
-    val id = profileActivity.id
+    private val id = ProfileActivity.teacherId
     val profileData : MutableLiveData<ResponseProfileDTO> = MutableLiveData()
     val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()

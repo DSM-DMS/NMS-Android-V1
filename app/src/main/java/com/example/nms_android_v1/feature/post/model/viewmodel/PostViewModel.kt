@@ -10,6 +10,7 @@ import com.example.nms_android_v1.feature.post.dto.ResponsePostDTO
 import android.content.Intent.getIntent
 
 import android.content.Intent
+import android.util.Log
 import com.example.nms_android_v1.feature.post.dto.comments
 import com.example.nms_android_v1.feature.post.ui.PostActivity
 import kotlin.properties.Delegates
@@ -20,7 +21,7 @@ class PostViewModel (
 
     private val sp: StarRepository = StarRepository()
 
-    private val notice_id = PostActivity.noticeId
+    private val noticeId = PostActivity.noticeId
 
     val postChatData: MutableLiveData<comments> = MutableLiveData()
 
@@ -30,12 +31,13 @@ class PostViewModel (
 
     val failed : MutableLiveData<Boolean> = MutableLiveData()
 
-
     fun getPostDetail() {
-        repository.getPostDetail(notice_id).subscribe { response ->
+        repository.getPostDetail(noticeId).subscribe { response ->
             if(response.isSuccessful) {
+                Log.d("error", "5")
                 postDetailData.value = response.body()
             } else {
+                Log.d("error", "6")
                 failed.value = true
             }
         }

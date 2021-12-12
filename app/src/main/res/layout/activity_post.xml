@@ -41,8 +41,9 @@
                 android:layout_marginLeft="8dp" />
 
             <TextView
-                android:layout_width="140dp"
-                android:layout_height="24dp"
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="네트상태를 확인해 주세요"
                 android:fontFamily="@font/noto_sans_kr_medium"
                 android:textSize="16dp"
@@ -67,7 +68,7 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/bg_circle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -269,6 +270,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/iv_good"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_like_empty" />
@@ -332,7 +334,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -358,6 +360,7 @@
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/bg_circle"
+                android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -366,6 +369,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="35dp"
+                android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/left_line"
                 app:layout_constraintRight_toRightOf="@id/right_line"
@@ -380,6 +384,7 @@
                     android:padding="7dp"
                     android:textColorHint="#707070"
                     android:textSize="14dp"
+                    android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -387,8 +392,8 @@
 
                 <TextView
                     android:id="@+id/bt_post"
-                    android:layout_width="24dp"
-                    android:layout_height="19dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="18dp"
                     android:fontFamily="@font/noto_sans_kr_medium"
                     android:text="게시"

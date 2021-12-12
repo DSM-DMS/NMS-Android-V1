@@ -10,8 +10,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import retrofit2.Response
 
 class PostRepository {
-    fun getPostDetail(notice_id: Int) : @NonNull Single<Response<ResponsePostDTO>> =
-        postApi.getPostDetail(ACCESS_TOKEN, notice_id)
+    fun getPostDetail(noticeId: Int) : @NonNull Single<Response<ResponsePostDTO>> =
+        postApi.getPostDetail(ACCESS_TOKEN, noticeId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 }
