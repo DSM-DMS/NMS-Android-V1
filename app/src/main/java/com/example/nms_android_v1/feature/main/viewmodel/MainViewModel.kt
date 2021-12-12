@@ -32,7 +32,7 @@ class MainViewModel(
     fun getTargetPosts(target: String) {
         mp.getTargetPosts(target).subscribe { response ->
             if(response.isSuccessful) {
-                postsData.value = response.body()
+                postsData.value = response.body()!!
             } else {
                 failed.value = true
             }

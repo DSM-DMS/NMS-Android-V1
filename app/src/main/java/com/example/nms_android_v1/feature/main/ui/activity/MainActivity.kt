@@ -1,5 +1,6 @@
 package com.example.nms_android_v1.feature.main.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,8 @@ import com.example.nms_android_v1.feature.main.model.Notice
 import com.example.nms_android_v1.feature.main.model.PostsResponse
 import com.example.nms_android_v1.feature.main.ui.fragment.BottomDialogFragment
 import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
+import com.example.nms_android_v1.feature.mypage.ui.MypageActivity
+import com.example.nms_android_v1.feature.post.ui.PostActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import io.reactivex.rxjava3.exceptions.UndeliverableException
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
@@ -32,6 +35,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.imageButton.setOnClickListener {
+            startActivity(Intent(this, MypageActivity::class.java))
+        }
+        
         RxJavaPlugins.setErrorHandler { e ->
             var error = e
             if (error is UndeliverableException) {
@@ -90,6 +97,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun setPosts(postsResponse: PostsResponse) {
+        postList.clear()
         for(i: Int in 0..postsResponse.notice_count-1) {
             postList.add(postsResponse.notices.get(i))
         }

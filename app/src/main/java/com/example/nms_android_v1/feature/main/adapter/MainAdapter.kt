@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
@@ -55,10 +56,11 @@ class MainAdapter(
                 tvPostCommtents.text = "댓글 ${comment_count}"
 
                 clItem.setOnClickListener {
-                    val intent = Intent(holder.itemView.context, PostActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    var intent = Intent(holder.itemView.context, PostActivity::class.java)
                     intent.putExtra("noticeId", notice_id)
-                    holder.itemView.context.startActivity(intent)
+                    intent.putExtra("teacherId", writer.id)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    ContextCompat.startActivity(holder.itemView.context, intent, null)
                 }
 
                 lnLike.setOnClickListener {

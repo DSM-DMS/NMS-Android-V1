@@ -17,11 +17,12 @@
         tools:context=".feature.register.ui.RegsiterFirstFragment">
 
         <ImageView
+            android:id="@+id/ivBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
             android:layout_marginTop="31dp"
+            android:padding="4dp"
             android:src="@drawable/ic_cancel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
