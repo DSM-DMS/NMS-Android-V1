@@ -25,6 +25,9 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
         super.onCreate(savedInstanceState)
         val gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false)
         binding.rvMyPage.layoutManager = gridLayoutManager
+
+        vm.myPage()
+
     }
 
     private fun setMypage(ResponseMyPage: ResponseMyPageDTO) {
