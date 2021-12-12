@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_item_image_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_item_top_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_login_btn_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_main_top_border.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_register_btn_border_off.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable-v24/bg_register_btn_border_on.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable/bg_circle.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable/ic_people.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/drawable/test.xml" value="0.26197916666666665" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/layout/activity_mypage.xml" value="0.253125" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/layout/activity_start.xml" value="0.253125" />
+        <entry key="..\:/NMS-Android-V1/app/src/main/res/layout/main_item.xml" value="0.4" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
