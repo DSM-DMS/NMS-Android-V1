@@ -18,9 +18,9 @@
 
        <androidx.constraintlayout.widget.ConstraintLayout
            android:id="@+id/clItem"
-           android:background="@color/white"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+           android:layout_height="wrap_content"
+           android:background="@color/white">
 
            <ImageView
                android:id="@+id/ivPostProfile"
@@ -31,7 +31,7 @@
                android:layout_marginTop="18dp"
                android:background="@drawable/bg_circle"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"/>
+               app:layout_constraintTop_toTopOf="parent" />
 
            <TextView
                android:id="@+id/tvPostMemberName"
@@ -56,84 +56,109 @@
                android:layout_marginLeft="8dp"
                android:layout_marginTop="16dp"
                android:fontFamily="@font/noto_sans_kr_medium"
+               android:text="2021년 10월 20일(화) 12:20"
                android:textColor="#707070"
                android:textSize="9dp"
                app:layout_constraintStart_toEndOf="@+id/ivPostProfile"
-               app:layout_constraintTop_toTopOf="@+id/tvPostMemberName"
-               android:text="2021년 10월 20일(화) 12:20" />
+               app:layout_constraintTop_toTopOf="@+id/tvPostMemberName" />
 
-           <View
-               android:id="@+id/view6"
-               android:layout_width="31dp"
-               android:layout_height="17dp"
-               android:layout_marginTop="7dp"
+           <TextView
+               android:visibility="gone"
+               android:id="@+id/tvType1"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="8dp"
                android:background="@drawable/bg_item_top_border"
+               android:fontFamily="@font/noto_sans_kr_medium"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:text="교내"
+               android:textColor="@color/white"
+               android:textSize="8dp"
                app:layout_constraintStart_toStartOf="@+id/ivPostProfile"
-               app:layout_constraintTop_toBottomOf="@+id/ivPostProfile"/>
+               app:layout_constraintTop_toBottomOf="@+id/ivPostProfile" />
 
            <TextView
-               android:id="@+id/tvPostPlace"
+               android:visibility="gone"
+               android:id="@+id/tvType4"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:fontFamily="@font/noto_sans_kr_medium"
-               android:textColor="#ffffff"
-               android:textSize="8dp"
-               android:textStyle="normal"
-               app:layout_constraintBottom_toBottomOf="@+id/view6"
-               app:layout_constraintEnd_toEndOf="@+id/view6"
-               app:layout_constraintStart_toStartOf="@+id/view6"
-               app:layout_constraintTop_toTopOf="@+id/view6"
-               android:text="교내" />
-
-           <View
-               android:id="@+id/sview6"
-               android:layout_width="35dp"
-               android:layout_height="17dp"
-               android:layout_marginStart="8dp"
-               android:layout_marginLeft="8dp"
+               android:layout_marginStart="9dp"
+               android:layout_marginLeft="9dp"
                android:background="@drawable/bg_item_top_border"
-               app:layout_constraintBottom_toBottomOf="@+id/view6"
-               app:layout_constraintStart_toEndOf="@+id/view6"
-               app:layout_constraintTop_toTopOf="@+id/view6"/>
+               android:fontFamily="@font/noto_sans_kr_medium"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:text="교내"
+               android:textColor="@color/white"
+               android:textSize="8dp"
+               app:layout_constraintBottom_toBottomOf="@+id/tvType3"
+               app:layout_constraintStart_toEndOf="@+id/tvType3"
+               app:layout_constraintTop_toTopOf="@+id/tvType3" />
 
            <TextView
-               android:id="@+id/tvPostGrade"
+               android:visibility="gone"
+               android:id="@+id/tvType3"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:layout_marginStart="9dp"
+               android:layout_marginLeft="9dp"
+               android:background="@drawable/bg_item_top_border"
                android:fontFamily="@font/noto_sans_kr_medium"
-               android:textColor="#ffffff"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:text="교내"
+               android:textColor="@color/white"
                android:textSize="8dp"
-               android:textStyle="normal"
-               app:layout_constraintBottom_toBottomOf="@+id/sview6"
-               app:layout_constraintEnd_toEndOf="@+id/sview6"
-               app:layout_constraintStart_toStartOf="@+id/sview6"
-               app:layout_constraintTop_toTopOf="@+id/sview6"
-               android:text="1학년" />
+               app:layout_constraintBottom_toBottomOf="@+id/tvType2"
+               app:layout_constraintStart_toEndOf="@+id/tvType2"
+               app:layout_constraintTop_toTopOf="@+id/tvType2" />
+
+           <TextView
+               android:visibility="gone"
+               android:id="@+id/tvType2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="9dp"
+               android:layout_marginLeft="9dp"
+               android:background="@drawable/bg_item_top_border"
+               android:fontFamily="@font/noto_sans_kr_medium"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:text="교내"
+               android:textColor="@color/white"
+               android:textSize="8dp"
+               app:layout_constraintBottom_toBottomOf="@+id/tvType1"
+               app:layout_constraintStart_toEndOf="@+id/tvType1"
+               app:layout_constraintTop_toTopOf="@+id/tvType1" />
 
            <TextView
                android:id="@+id/tvPostTitle"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:layout_marginStart="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="32dp"
                android:fontFamily="@font/noto_sans_kr_medium"
+               android:text="제목이 없습니다."
                android:textColor="#000000"
                android:textSize="12dp"
                android:textStyle="normal"
-               app:layout_constraintStart_toStartOf="@+id/view6"
-               app:layout_constraintTop_toBottomOf="@+id/view6"
-               android:text="제목이 없습니다." />
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/tvPostDate" />
 
            <TextView
                android:id="@+id/tvPostContent"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginTop="16dp"
+               android:layout_marginTop="20dp"
                android:fontFamily="@font/noto_sans_kr_regular"
+               android:text="내용이 없습니다."
                android:textColor="#000000"
                android:textSize="12dp"
                android:textStyle="normal"
                app:layout_constraintStart_toStartOf="@+id/tvPostTitle"
-               app:layout_constraintTop_toBottomOf="@+id/tvPostGrade"
-               android:text="내용이 없습니다." />
+               app:layout_constraintTop_toTopOf="@+id/tvPostTitle" />
 
            <ImageView
                android:id="@+id/imageView3"
@@ -165,14 +190,14 @@
                android:layout_marginStart="4dp"
                android:layout_marginLeft="4dp"
                android:fontFamily="@font/noto_sans_kr_regular"
+               android:text="0"
                android:textColor="#000000"
                android:textSize="12sp"
                android:textStyle="normal"
                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                app:layout_constraintStart_toEndOf="@+id/imageView4"
                app:layout_constraintTop_toTopOf="@+id/imageView4"
-               app:layout_constraintVertical_bias="0.458"
-               android:text="0" />
+               app:layout_constraintVertical_bias="0.458" />
 
            <TextView
                android:id="@+id/tvPostCommtents"
@@ -180,12 +205,12 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="8dp"
                android:fontFamily="@font/noto_sans_kr_regular"
+               android:text="댓글 0"
                android:textColor="#000000"
                android:textSize="12sp"
                android:textStyle="normal"
                app:layout_constraintEnd_toEndOf="@+id/imageView3"
-               app:layout_constraintTop_toBottomOf="@+id/imageView3"
-               android:text="댓글 0" />
+               app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
            <View
                android:id="@+id/view10"
