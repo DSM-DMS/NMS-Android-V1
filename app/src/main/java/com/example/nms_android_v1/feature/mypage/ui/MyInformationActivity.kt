@@ -20,6 +20,8 @@ class MyInformationActivity : BaseActivity<ActivityMyInformationBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        vm.myInformation()
     }
 
     private fun setMyInformation(responseMyPageDTO: ResponseMyPageDTO){
