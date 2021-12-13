@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityPostBinding
@@ -86,6 +87,9 @@ import kotlin.properties.Delegates
          binding.tvCommentCount.text = responsePostDTO.comment_count.toString()
          binding.tvStarCount.text = responsePostDTO.star_count.toString()
          binding.tvTitle2.text = responsePostDTO.title
+         Glide.with(applicationContext)
+             .load(responsePostDTO.writer.profile_url)
+             .into(binding.ivImage)
      }
 
      fun setLikeOn() {
@@ -103,6 +107,7 @@ import kotlin.properties.Delegates
              Log.d("error","10")
                  postDetailData.observe(this@PostActivity, {
                  setPostDetail(it)
+                     setChat(it)
                  Log.d("error", "1")
              })
 
