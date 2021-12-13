@@ -3,6 +3,7 @@ package com.example.nms_android_v1.feature.profile.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import com.example.nms_android_v1.R
 import com.example.nms_android_v1.base.BaseActivity
 import com.example.nms_android_v1.databinding.ActivityPostBinding
@@ -37,6 +38,9 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(
         binding.tvPhone.text = responseProfileDTO.phone_number
         binding.tvIntroduce.text = responseProfileDTO.introduce
         binding.tvClass.text = responseProfileDTO.department
+        Glide.with(applicationContext)
+            .load(responseProfileDTO.profile_url)
+            .into(binding.ivProfile)
     }
 
     override fun observeEvent() {
