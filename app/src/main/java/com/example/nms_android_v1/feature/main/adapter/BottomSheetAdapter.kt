@@ -31,7 +31,7 @@ class BottomSheetAdapter(
         holder.tvMenu?.setOnClickListener {
             when(item.menu) {
                 "교내" -> vm.getTargetPosts("SCHOOL")
-                "교외" -> vm.getTargetPosts("SUBARBS")
+                "교외" -> vm.getEvent()
                 "1학년" -> vm.getTargetPosts("GRADE_FIRST")
                 "2학년" -> vm.getTargetPosts("GRADE_SECOND")
                 "3학년" -> vm.getTargetPosts("GRADE_THIRD")
