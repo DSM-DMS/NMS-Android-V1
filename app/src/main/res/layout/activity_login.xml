@@ -99,6 +99,7 @@
             app:layout_constraintTop_toTopOf="@+id/cbSaveAccount" />
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/etLoginPW"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
