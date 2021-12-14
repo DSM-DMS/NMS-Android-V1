@@ -18,7 +18,6 @@ import com.example.nms_android_v1.feature.post.ui.PostActivity
 class LikePostAdapter(
     private val context: Context,
     private val LikePostData: List<Liked_Notices_Value>,
-    private val vm: PostViewModel
 ) : RecyclerView.Adapter<LikePostAdapter.ViewHolder>() {
 
     private var datas = mutableListOf<LikePostData>()
@@ -38,6 +37,7 @@ class LikePostAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         binding.run {
             LikePostData[position].run {
+
                 Glide.with(holder.itemView.context)
                     .load(image)
                     .into(likephoto)
