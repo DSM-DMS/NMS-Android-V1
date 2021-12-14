@@ -26,6 +26,8 @@ class MainAdapter(
     private lateinit var binding: MainItemBinding
     var liked = 0
 
+    var like: Boolean = false
+
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
     }
 
@@ -42,8 +44,14 @@ class MainAdapter(
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         Log.d("Main", "onBindViewHolder: ${productData.get(position)}")
+
         binding.run {
             productData.get(position).run {
+                if(is_star) {
+                    like = true
+                }
+
+
                 if (!(writer.profile_url.isNullOrEmpty())) {
                     Glide.with(holder.itemView.context)
                         .load(writer.profile_url)
@@ -55,7 +63,15 @@ class MainAdapter(
                 tvPostContent.text = content
                 liked = star_count
                 tvPostLiked.text = star_count.toString()
-                tvPostCommtents.text = "댓글 ${comment_count}"
+                if(comment_count != null) {
+                    tvPostCommtents.text = "댓글 ${comment_count}"
+                } else {
+                    tvPostLiked.visibility = View.GONE
+                    imageView4.visibility = View.GONE
+                    tvPostCommtents.visibility = View.GONE
+                    lnLike.visibility = View.GONE
+                    lnCommments.visibility = View.GONE
+                }
 
                 clItem.setOnClickListener {
                     var intent = Intent(holder.itemView.context, PostActivity::class.java)
@@ -67,29 +83,39 @@ class MainAdapter(
 
                 lnLike.setOnClickListener {
                     vm.star(notice_id.toString())
+
+                    if(like) {
+                        like = !like
+                        ivItemHeart.setImageResource(R.drawable.ic_like_full)
+                        tvPostLiked.setText("회원님 외 ${liked}명")
+                    } else {
+                        like = !like
+                        ivItemHeart.setImageResource(R.drawable.ic_like_empty)
+                        tvPostLiked.setText(liked.toString())
+                    }
                 }
 
-                if (targets.size >= 1) {
-                    tvType1.visibility = View.VISIBLE
-                    tvType1.text = getName(targets.get(0))
+                if(targets != null) {
+                    if (targets.size >= 1) {
+                        tvType1.visibility = View.VISIBLE
+                        tvType1.text = getName(targets.get(0))
+                    }
+
+                    if (targets.size >= 2) {
+                        tvType2.visibility = View.VISIBLE
+                        tvType2.text = getName(targets.get(1))
+                    }
+
+                    if (targets.size >= 3) {
+                        tvType3.visibility = View.VISIBLE
+                        tvType3.text = getName(targets.get(2))
+                    }
+
+                    if (targets.size >= 4) {
+                        tvType4.visibility = View.VISIBLE
+                        tvType4.text = getName(targets.get(3))
+                    }
                 }
-
-                if (targets.size >= 2) {
-                    tvType2.visibility = View.VISIBLE
-                    tvType2.text = getName(targets.get(1))
-                }
-
-                if (targets.size >= 3) {
-                    tvType3.visibility = View.VISIBLE
-                    tvType3.text = getName(targets.get(2))
-                }
-
-                if (targets.size >= 4) {
-                    tvType4.visibility = View.VISIBLE
-                    tvType4.text = getName(targets.get(3))
-                }
-
-
             }
         }
 
@@ -110,13 +136,4 @@ class MainAdapter(
         return "default"
     }
 
-    fun setLikeOn() {
-        binding.ivItemHeart.setImageResource(R.drawable.ic_like_full)
-        binding.tvPostLiked.setText("회원님 외 ${liked}명")
-    }
-
-    fun setLikeOff() {
-        binding.ivItemHeart.setImageResource(R.drawable.ic_like_empty)
-        binding.tvPostLiked.setText(liked.toString())
-    }
 }

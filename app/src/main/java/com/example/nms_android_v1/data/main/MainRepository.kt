@@ -3,6 +3,7 @@ package com.example.nms_android_v1.data.main
 import ACCESS_TOKEN
 import com.example.nms_android_v1.di.mainApi
 import com.example.nms_android_v1.feature.main.model.PostsResponse
+import com.example.nms_android_v1.feature.main.model.event.EventResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.annotations.NonNull
 import io.reactivex.rxjava3.core.Single
@@ -18,6 +19,11 @@ class MainRepository {
 
     fun getTargetPosts(target: String) : @NonNull Single<Response<PostsResponse>> =
         mainApi.getTargetPosts(ACCESS_TOKEN, target)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+
+    fun getEvent() : @NonNull Single<Response<EventResponse>> =
+        mainApi.getEvent(ACCESS_TOKEN, "SUBURBS")
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
 }

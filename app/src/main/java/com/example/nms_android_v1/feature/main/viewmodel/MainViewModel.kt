@@ -7,6 +7,7 @@ import com.example.nms_android_v1.data.main.MainRepository
 import com.example.nms_android_v1.data.star.StarRepository
 import com.example.nms_android_v1.feature.main.model.Notice
 import com.example.nms_android_v1.feature.main.model.PostsResponse
+import com.example.nms_android_v1.feature.main.model.event.EventResponse
 
 class MainViewModel(
     private val mp: MainRepository,
@@ -16,6 +17,7 @@ class MainViewModel(
     val toastMessage : MutableLiveData<String> = MutableLiveData()
     val failed : MutableLiveData<Boolean> = MutableLiveData()
     val postsData : MutableLiveData<PostsResponse> = MutableLiveData()
+    val eventData : MutableLiveData<EventResponse> = MutableLiveData()
 
     fun getPosts() {
         mp.getPosts().subscribe( { response ->
@@ -33,6 +35,16 @@ class MainViewModel(
         mp.getTargetPosts(target).subscribe { response ->
             if(response.isSuccessful) {
                 postsData.value = response.body()!!
+            } else {
+                failed.value = true
+            }
+        }
+    }
+
+    fun getEvent() {
+        mp.getEvent().subscribe { response ->
+            if(response.isSuccessful) {
+                eventData.value = response.body()!!
             } else {
                 failed.value = true
             }

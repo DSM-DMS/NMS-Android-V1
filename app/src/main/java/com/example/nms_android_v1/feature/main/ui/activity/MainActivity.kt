@@ -11,10 +11,11 @@ import com.example.nms_android_v1.feature.main.adapter.MainAdapter
 import com.example.nms_android_v1.feature.main.model.BottomDialog.BottomDialogData
 import com.example.nms_android_v1.feature.main.model.Notice
 import com.example.nms_android_v1.feature.main.model.PostsResponse
+import com.example.nms_android_v1.feature.main.model.WriterXX
+import com.example.nms_android_v1.feature.main.model.event.EventResponse
 import com.example.nms_android_v1.feature.main.ui.fragment.BottomDialogFragment
 import com.example.nms_android_v1.feature.main.viewmodel.MainViewModel
 import com.example.nms_android_v1.feature.mypage.ui.MypageActivity
-import com.example.nms_android_v1.feature.post.ui.PostActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import io.reactivex.rxjava3.exceptions.UndeliverableException
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
@@ -91,15 +92,31 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
         binding.rvMain.layoutManager = LinearLayoutManager(this)
         binding.rvMain.setHasFixedSize(true)
-        binding.rvMain.adapter = mainAdapter
 
         vm.getPosts()
     }
 
     private fun setPosts(postsResponse: PostsResponse) {
+        binding.rvMain.adapter = mainAdapter
+
         postList.clear()
-        for(i: Int in 0..postsResponse.notice_count-1) {
+        for(i: Int in 0..postsResponse.notice_count-2) {
             postList.add(postsResponse.notices.get(i))
+        }
+        binding.rvMain.adapter?.notifyDataSetChanged()
+    }
+
+    private fun setEvent(eventResponse: EventResponse) {
+        binding.rvMain.adapter = mainAdapter
+
+        postList.clear()
+        for(i: Int in 0..eventResponse.noticeCount-2) {
+            var notice: Notice
+            eventResponse.notices.get(i).run {
+                notice = Notice(null, null, "\t주최 : ${host} \n \t 일시 : ${createdDate} \n \t 링크 : ${link}",
+                    createdDate, null, false, id, 0, null, title, createdDate, WriterXX("event", host, null))
+            }
+            postList.add(notice)
         }
         binding.rvMain.adapter?.notifyDataSetChanged()
     }
@@ -108,6 +125,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
         vm.run {
             postsData.observe(this@MainActivity, {
+                Log.d("test", "observeEvent: 실행 ${it}")
+                postList.clear()
                 setPosts(it)
             })
 
@@ -115,15 +134,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 showToast(it.toString())
             })
 
+            eventData.observe(this@MainActivity, {
+                Log.d("test", "observeEvent: 실행2 ${it}")
+                postList.clear()
+                setEvent(it)
+            })
+
             toastMessage.observe(this@MainActivity, {
                 showToast(it.toString())
-
-                if(it == "좋아요 성공") {
-                    mainAdapter.setLikeOn()
-                }
-                if(it == "취소 성공") {
-                    mainAdapter.setLikeOff()
-                }
             })
         }
     }
