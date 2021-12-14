@@ -1,5 +1,6 @@
 package com.example.nms_android_v1.feature.mypage.ui
 
+import android.content.Intent
 import android.os.Bundle
 import com.example.nms_android_v1.R
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,6 +29,10 @@ class MypageActivity : BaseActivity<ActivityMypageBinding>(
 
         vm.myPage()
 
+        binding.profileedit.setOnClickListener {
+            intent = Intent(this, MyInformationActivity :: class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setMypage(ResponseMyPage: ResponseMyPageDTO) {
