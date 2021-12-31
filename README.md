@@ -7,6 +7,7 @@ Made by Team DMS (전공동아리)
 
 Email Address : sh007100@naver.com, aahspringaa4@gmail.com
 
+협업 Tools : Git Flows
 <br>
 <br>
 <br>
