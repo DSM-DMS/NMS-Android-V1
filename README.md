@@ -28,7 +28,7 @@ NMS는 학교 공지사항/각종 정보 등을 쉽게 확인할 수 있는 서�
 - targetSdkVersion : 31
 
 ## Skills
-- RxJava, Koin, Retrofit2, OkHttp, MVVM, AAC, Glide
+- RxJava3, Koin, Retrofit2, OkHttp, MVVM, AAC, Glide
 
 ## Screenshot
 <img src="https://user-images.githubusercontent.com/80076029/146698327-ac711722-0858-49b7-a691-07441c75fd05.png" width="180px" height="380px"></img>
